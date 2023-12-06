@@ -1,0 +1,204 @@
+; /****************************************************************************
+; ** THIS FILE IS Installation file for the RDC Based Fast                   **
+; ** Ethernet PCI Adapter.                                                   **
+; ** Add ACPIEnable parameter to registry.                                   **
+; **                                                                         **
+; **                                            		             **
+; **                                                                         **
+; ****************************************************************************/
+
+[Version]
+Signature   = "$Chicago$"
+Compatible  = 1
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %V_DSI%
+DriverVer   = 02/05/2001, 1.0.01.0205
+
+[Manufacturer]
+%V_DSI% = RDC
+
+[ControlFlags]
+ExcludeFromSelect = PCI\VEN_17F3&DEV_6040, \
+                    PCI\VEN_17F3&DEV_6040&SUBSYS_00000000, \
+[RDC]
+; DisplayName           Section       DeviceID
+; -----------           -------       --------
+%RDC.DeviceDesc% = RDC.ndi,     PCI\VEN_17F3&DEV_6040&SUBSYS_00000000
+
+
+;=============================================================================
+;
+; WIN9x
+;
+;=============================================================================
+[RDC.ndi]
+AddReg    = RDC.id.reg, RDC.pci.reg, RDC.win.reg, RDC.con.win.reg
+CopyFiles = rdcpci.win.CopyFiles, rdcndi.dll.CopyFiles
+
+;=============================================================================
+;
+; WINNT specific entry
+;
+;=============================================================================
+[RDC.ndi.NT]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = RDC.id.reg, RDCPCI.reg, RDC.pci.reg
+CopyFIles       = RDCPCI.CopyFiles
+
+[RDC.ndi.NT.Services]
+AddService = RDC, 2, RDC.Service, common.EventLog
+
+[RDCPCI.CopyFiles]
+RDCPCI5.SYS,,,2
+
+
+;=============================================================================
+;
+; Win9x id registry sections
+; These are not needed by NT
+;
+;=============================================================================
+
+[RDC.id.reg]
+HKR, Ndi, DeviceID, 0, "PCI\VEN_17F3&DEV_6040"
+HKR,,AdapterPCIID,0,"604017F3"
+
+;=============================================================================
+;
+; Win9x flags section
+; Flags are not needed by NT
+;
+;=============================================================================
+;****************************************************************************
+; PCI common parameters
+;****************************************************************************
+
+[RDC.pci.reg]
+;params
+HKR,                            , AdapterType, 0,"5"
+HKR,                            , BusType,     0,"5"            ;; PCI
+
+;Tx Flow Control
+HKR, Ndi\params\TxFlowCtrl,     ParamDesc, 0,"Transmit Flow Control"
+HKR, Ndi\params\TxFlowCtrl,       default, 0,"0"
+HKR, Ndi\params\TxFlowCtrl,          type, 0,"enum"
+HKR, Ndi\params\TxFlowCtrl\enum,        0, 0,"Disabled"
+HKR, Ndi\params\TxFlowCtrl\enum,        1, 0,"Enabled"
+
+;Rx Flow Control
+HKR, Ndi\params\RxFlowCtrl,     ParamDesc, 0,"Receive Flow Control"
+HKR, Ndi\params\RxFlowCtrl,       default, 0,"0"
+HKR, Ndi\params\RxFlowCtrl,          type, 0,"enum"
+HKR, Ndi\params\RxFlowCtrl\enum,        0, 0,"Disabled"
+HKR, Ndi\params\RxFlowCtrl\enum,        1, 0,"Enabled"
+
+;ConnectionType
+HKR, Ndi\params\ConnectionType,      ParamDesc,  0,"Connection Type"
+HKR, Ndi\params\ConnectionType,      default,    0,"0"
+HKR, Ndi\params\ConnectionType,      type,       0,"enum"
+HKR, Ndi\params\ConnectionType\enum, 0,          0,"AutoSense"
+HKR, Ndi\params\ConnectionType\enum, 1,          0,"10Mbps"
+HKR, Ndi\params\ConnectionType\enum, 2,          0,"100Mbps"
+HKR, Ndi\params\ConnectionType\enum, 3,          0,"10Mbps Full_Duplex"
+HKR, Ndi\params\ConnectionType\enum, 4,          0,"100Mbps Full_Duplex"
+
+[RDC.con.win.reg]
+HKR,NDI\params\ConnectionType,flag,1,20,00,00,00
+
+;=============================================================================
+;
+; RDC NT specific
+;
+;=============================================================================
+
+[RDCPCI.reg]
+HKR, Ndi,                       Service,    0, "RDC"
+; use ndis5 as the upper bound because NT supports it
+HKR, Ndi\Interfaces,            DefUpper,   0, "ndis5"
+HKR, Ndi\Interfaces,            DefLower,   0, "ethernet"
+HKR, Ndi\Interfaces,            UpperRange, 0, "ndis5"
+HKR, Ndi\Interfaces,            LowerRange, 0, "ethernet"
+HKR,                            ,WIN98Timer,   0,"0"
+
+[RDC.Service]
+DisplayName     = %RDCPCI.Service.DispName%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\RDCPCI5.SYS
+LoadOrderGroup  = NDIS
+
+[common.EventLog]
+AddReg = common.AddEventLog.reg
+
+[common.AddEventLog.reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+;=============================================================================
+;
+; RDC Win9x specific
+;
+;=============================================================================
+[RDC.win.reg]
+HKR, ,              DevLoader,          0, "*ndis"
+HKR, NDIS,          LogDriverName,      0, "RDCPCI"
+HKR, NDIS,          MajorNdisVersion,   1, 03
+HKR, NDIS,          MinorNdisVersion,   1, 0A
+
+HKR, ,              EnumPropPages,      0, "netdi.dll,EnumPropPages"
+HKR,Ndi,NdiInstaller,                    , "rdcndi.dll,RDCNdiProc"
+HKR, Ndi\Interfaces,DefUpper,           0, "ndis3,ndis2"
+HKR, Ndi\Interfaces,DefLower,           0, "ethernet"
+HKR, Ndi\Interfaces,UpperRange,         0, "ndis3,ndis2"
+HKR, Ndi\Interfaces,LowerRange,         0, "ethernet"
+;HKR,                     ,WIN98Timer,   0, "1"
+;HKR,NDI\params\StoreAndForward,flag,1,20,00,00,00
+;HKR,NDI\params\TransmitThreshold,flag,1,20,00,00,00
+;HKR,NDI\params\ACPIEnable,flag,1,20,00,00,00
+
+;=============================================================================
+;
+;Ndis driver selection
+;
+;=============================================================================
+;HKR,Ndi\params\NdisVersion,ParamDesc,,"NDIS Version"
+;HKR,Ndi\params\NdisVersion,default,,0
+;HKR,Ndi\params\NdisVersion,type,,enum
+;HKR,Ndi\params\NdisVersion\enum,0,,"Auto Selection"
+;HKR,NDI\params\NdisVersion,flag,1,20,00,00,00
+
+;=============================================================================
+;
+; DestinationDirs
+;
+;=============================================================================
+[rdcpci.win.CopyFiles]
+RDCPCI5.SYS
+
+[rdcndi.dll.CopyFiles]
+rdcndi.dll
+
+[DestinationDirs]
+DefaultDestDir       =          12
+RDCPCI.CopyFiles     =          12
+rdcpci.win.CopyFiles =          11
+rdcndi.dll.CopyFiles =          11
+
+[SourceDisksNames]
+50="RDC PCI Based Network Drivers Disk",,
+
+[SourceDisksFiles]
+RDCPCI5.sys = 50,,10000
+RDCNDI.dll  = 50,,10000
+
+[Strings]
+V_DSI    = "RDC Semiconductor, Inc."
+RDC.DeviceDesc   = "RDC PCI Fast Ethernet Adapter "
+
+RDCPCI.Service.DispName = "RDC PCI Based Network Adapter NT Driver"
+
+
+

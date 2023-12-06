@@ -1,0 +1,776 @@
+; ITX-Llama modified INF
+
+[Version]
+Signature="$CHICAGO$"
+CatalogFile=IUSV2860.cat
+Class=MEDIA
+provider="Crystal Semiconductor"
+LayoutFile=layout.inf
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%CSMfgName%=Crystal
+
+[Crystal]
+%*CSC0000.DeviceDesc%=CSC0000_Device, *CSC0000
+%*CSCFFFF.DeviceDesc%=CSCFFFF_Device, *CSCFFFF
+%*CSC0001.DeviceDesc%=CSC0001_Device, *CSC0001
+%*CSC0010.DeviceDesc%=CSC0010_Device, *CSC0010
+%*CSC0003.DeviceDesc%=CSC0003_Device, *CSC0003
+%*CSC000F.DeviceDesc%=CSC000F_Device, *CSC000F
+%*CSC0004.DeviceDesc%=CSC0004_Device, *CSC0004
+;4235/39 devices:
+%*CSC0000.DeviceDesc%=CSC0000_Device, *CSC0100
+%*CSC0001.DeviceDesc%=CSC0001_Device, *CSC0101
+%*CSC0010.DeviceDesc%=CSC0010_Device, *CSC0110
+%*CSC0003.DeviceDesc%=CSC0003_Device, *CSC0103
+%*CSC000F.DeviceDesc%=CSC000F_Device, *CSC010F
+%*CSC0004.DeviceDesc%=CSC0004_Device, *CSC0104
+
+; This was added since OSR2 does not support NODRIVER.INF.  We basically
+; treat CSC0002 and CSC0010 the same.
+%*CSC0010.DeviceDesc%=CSC0010_Device, *CSC0002
+
+; Special Mobile Triton I devnode.
+%*CSC0011.DeviceDesc%=CSC0011_Device, *CSC0011
+%*CSC0011.DeviceDesc%=CSC0011_Device, *CSC0111
+
+;--------------------------------------------------------------------------
+
+; To NOT install the 3d applet remove the Cwd3dsnd.CopyList and Cwd3dsnd.AddReg entries
+; from the CopyFiles entry below.
+[CSCFFFF_Device]
+DelFiles=WSS.DelList
+;CopyFiles=WSS.CopyList,Windir.CopyList,Power.CopyList,Cwd3dsnd.CopyList
+CopyFiles=WSS.CopyList,Windir.CopyList,Power.CopyList
+UpdateInis=WSS.UpdateInis
+UpdateCfgSys=CWDINIT.UpdateCfgSys
+
+; To NOT install the 3d applet remove the Cwd3dsnd.CopyList and Cwd3dsnd.AddReg entries
+; from the CopyFiles and AddReg entries below.
+[CSC0000_Device]
+DelFiles=WSS.DelList
+;CopyFiles=WSS.CopyList,Windir.CopyList,Power.CopyList,Cwd3dsnd.CopyList
+CopyFiles=WSS.CopyList,Windir.CopyList,Power.CopyList
+;AddReg=WAVE.AddReg, MIXER.AddReg, CSC0000.AddReg, WSS.AddReg, Power.AddReg, Cwd3dsnd.AddReg
+AddReg=WAVE.AddReg, MIXER.AddReg, CSC0000.AddReg, WSS.AddReg, Power.AddReg
+UpdateInis=WSS.UpdateInis
+UpdateCfgSys=CWDINIT.UpdateCfgSys
+
+
+
+[WSS.UpdateInis]
+system.ini,386Enh,"device=vsndsys.386"
+system.ini,drivers,"wave*=sndsys.drv",,1
+system.ini,drivers,"wave*=cs31ba11.drv",,1
+system.ini,drivers,"wave*=cwdaudio.drv",,1
+system.ini,drivers,"midi*=sndsys.drv",,1
+system.ini,drivers,"aux*=sndsys.drv",,1
+system.ini,drivers,"aux*=cs31ba11.drv",,1
+system.ini,drivers,"aux*=cwdaudio.drv",,1
+system.ini,drivers,"mixer*=sndsys.drv",,1
+system.ini,drivers,"mixer*=cs31ba11.drv",,1
+system.ini,drivers,"mixer*=cwdaudio.drv",,1
+
+[WSS.CopyList]
+cwdaudix.vxd,,
+cwdaudio.drv,,
+cwdfm.drv,,
+cwdjoy.vxd,,
+
+[Windir.CopyList]
+;cwdinit.exe,,
+cwdaudio.ini,,
+cwdaudio.bin,,
+cwdmix.exe,,
+
+[WSS.DelList]
+vsndsys.386,,,1
+sndsys.drv,,,1
+vaudiod.386,,,1
+cpqaudio.drv,,,1
+vsbd.386,,,1
+vadlibd.386,,,1
+nullwave.drv,,,1
+mssndsys.drv,,,1
+mssndsys.vxd,,,1
+
+[WSS.AddReg]
+HKR,,Driver,,"cwdaudix.vxd"
+HKR,Drivers\wave\cwdaudio.drv,Driver,,cwdaudio.drv
+HKR,Drivers\mixer\cwdaudio.drv,Driver,,cwdaudio.drv
+HKR,Drivers\aux\cwdaudio.drv,Driver,,cwdaudio.drv
+HKR,Drivers\midi\cwdfm.drv,,,
+HKR,Drivers\midi\cwdfm.drv,Driver,,cwdfm.drv
+; Uncomment the next Line if Wavetable Synthesizer hardware is present in the system
+; Edits also in section [MPU401.AddReg] below
+; HKR,Drivers\midi\cwdfm.drv,External,1,01,00,00,00
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+HKR,,EnumPropPages,,"cwdaudio.drv,DrvEnumPropPages"
+HKLM,%KEY_FIL%\fl.UpdateInis,device.vsndsys,,"system.ini,386Enh,""device=vsndsys.386"",,"
+
+[CSC0000.AddReg]
+HKR,Drivers\wave\cwdaudio.drv,Description,,%*CSC0000.DeviceDesc%
+HKR,Drivers\mixer\cwdaudio.drv,Description,,%*CSC0000.DeviceDesc%
+HKR,Drivers\aux\cwdaudio.drv,Description,,%*CSC0000.DeviceDesc%
+HKR,Drivers\midi\cwdfm.drv,Description,,%V_INTERNAL%
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+HKR,Config\DRIVER,Interp8,,Linear
+HKR,Config\DRIVER,Interp16,,Linear
+HKR,Config\DRIVER,SaveSettingsOnExit,,ON
+HKR,Config\DRIVER,DMATimingMode,,1
+HKR,Config\DRIVER,4232ADPCMEnable,,1
+HKR,Config\DRIVER,PlayIntsPerSec,,20
+HKR,Config\MIXER,IntsPerSec,,50
+;HKR,Config\DRIVER,UseAllFs,,0
+HKR,Config\MIXER,WaveVolumeOffset,,48
+HKR,Config\MIXER,lLineVolume,,45874
+HKR,Config\MIXER,rLineVolume,,45874
+HKR,Config\MIXER,LineGang,,ON
+HKR,Config\MIXER,MicVolume,,45874
+HKR,Config\MIXER,lMicVolume,,45874
+HKR,Config\MIXER,rMicVolume,,45874
+HKR,Config\MIXER,MicGang,,ON
+HKR,Config\MIXER,lAuxInVolume,,45874
+HKR,Config\MIXER,rAuxInVolume,,45874
+HKR,Config\MIXER,AuxInGang,,ON
+HKR,Config\MIXER,lLoopBackInputVolume,,45874
+HKR,Config\MIXER,rLoopBackInputVolume,,45874
+HKR,Config\MIXER,LoopBackInputGang,,ON
+HKR,Config\MIXER,MonitorVolume,,42280
+HKR,Config\MIXER,MonitorMute,,ON
+HKR,Config\MIXER,MonitorMode,,Recording
+HKR,Config\MIXER,lMasterVolume,,42280
+HKR,Config\MIXER,rMasterVolume,,42280
+HKR,Config\MIXER,MasterMute,,OFF
+HKR,Config\MIXER,MasterGang,,ON
+HKR,Config\MIXER,lAuxVolume,,42280
+HKR,Config\MIXER,rAuxVolume,,42280
+HKR,Config\MIXER,AuxMute,,OFF
+HKR,Config\MIXER,AuxGang,,ON
+HKR,Config\MIXER,lAux2Volume,,42280
+HKR,Config\MIXER,rAux2Volume,,42280
+HKR,Config\MIXER,Aux2Mute,,OFF
+HKR,Config\MIXER,Aux2Gang,,ON
+HKR,Config\MIXER,lLineMixVolume,,42280
+HKR,Config\MIXER,rLineMixVolume,,42280
+HKR,Config\MIXER,LineMixMute,,OFF
+HKR,Config\MIXER,LineMixGang,,ON
+HKR,Config\MIXER,MonoVolume,,42280
+HKR,Config\MIXER,MonoMute,,ON
+HKR,Config\MIXER,MonoOutMute,,ON
+HKR,Config\MIXER,MicBoost,,OFF
+HKR,Config\MIXER,HWMUTE,,"0,1,E"
+HKR,Config\MIXER,lVirtMaster,,48059
+HKR,Config\MIXER,rVirtMaster,,48059
+HKR,Config\MIXER,lLowPriMicVolume,,45874
+HKR,Config\MIXER,rLowPriMicVolume,,45874
+HKR,Config\MIXER,LowPriMicMute,,ON
+HKR,Config\MIXER,LowPriMicBoost,,ON
+HKR,Config\MIXER,lLowPriLineVolume,,45874
+HKR,Config\MIXER,rLowPriLineVolume,,45874
+HKR,Config\MIXER,lLowPriLoopBackInputVolume,,45874
+HKR,Config\MIXER,rLowPriLoopBackInputVolume,,45874
+HKR,Config\MIXER,lLowPriAuxInVolume,,45874
+HKR,Config\MIXER,rLowPriAuxInVolume,,45874
+HKR,Config\MIXER,VirtMasterMute,,OFF
+HKR,Config\MIXER,VirtMasterGang,,ON
+HKR,Config\MIXER,MicAGC,,OFF
+HKR,Config\MIXER,DisableKaraokeMode,,OFF
+HKR,Config\MIXER,KaraokeMode,,OFF
+HKR,Config\MIXER,SmartKaraokeMode,,ON
+
+;------------------- new control values for symmetrical mixer ----------jmh
+; value encoding changed, used to be:
+;HKR,Config\MIXER,InputSelection,,MIC
+;HKR,Config\MIXER,LowPriInputSelection,,MIC
+; now should be:
+HKR,Config\MIXER,InputSelection,,8
+HKR,Config\MIXER,LowPriInputSelection,,8
+;------ moved and renamed  -------------------------
+;HKR,Config\MIXER,XCTL0,,0
+;HKR,Config\MIXER,XCTL1,,0
+;------ new ----------------------------------------
+HKR,Config\MIXER,lDacSERVolume,,45874
+HKR,Config\MIXER,rDacSERVolume,,45874
+HKR,Config\MIXER,DacSERMute,,ON
+HKR,Config\MIXER,lLine-inVolume,,45874
+HKR,Config\MIXER,rLine-inVolume,,45874
+HKR,Config\MIXER,Line-inInputMute,,ON
+HKR,Config\MIXER,Line-inOutputMute,,ON
+HKR,Config\MIXER,3DSpace,,32768
+HKR,Config\MIXER,3DCenter,,32768
+HKR,Config\MIXER,3DMute,,OFF
+HKR,Config\MIXER,Aux2InputMute,,OFF
+HKR,Config\MIXER,Aux1InputMute,,OFF
+HKR,Config\MIXER,LineInputMute,,OFF
+HKR,Config\MIXER,MicInputMute,,OFF
+HKR,Config\MIXER,MicOutputMute,,ON
+HKR,Config\MIXER,lWaveOutVolume,,42280
+HKR,Config\MIXER,rWaveOutVolume,,42280
+HKR,Config\MIXER,WaveOutMute,,OFF
+HKR,Config\MIXER,lSysVol,,42280
+HKR,Config\MIXER,rSysVol,,42280
+HKR,Config\MIXER,lWaveinMasterVolume,,36000
+HKR,Config\MIXER,rWaveinMasterVolume,,36000
+;-- Mahler additions
+HKR,Config\MIXER,lDspSYNTHVolume,,42280
+HKR,Config\MIXER,rDspSYNTHVolume,,42280
+HKR,Config\MIXER,DspSYNTHIMute,,ON
+HKR,Config\MIXER,DspSYNTHOMute,,OFF
+HKR,Config\MIXER,lDspWAVEVolume,,42280
+HKR,Config\MIXER,rDspWAVEVolume,,42280
+HKR,Config\MIXER,DspWAVEIMute,,ON
+HKR,Config\MIXER,DspWAVEOMute,,OFF
+HKR,Config\MIXER,lDac2Volume,,45874
+HKR,Config\MIXER,rDac2Volume,,45874
+HKR,Config\MIXER,Dac2InputMute,,ON
+HKR,Config\MIXER,Dac2OutputMute,OFF
+HKR,Config\MIXER,lZVPORTVolume,,0
+HKR,Config\MIXER,rZVPORTVolume,,0
+HKR,Config\MIXER,lDigSYNTHVolume,,0
+HKR,Config\MIXER,rDigSYNTHVolume,,0
+HKR,Config\MIXER,Dac2Mux,,00000002
+HKR,Config\MIXER,WaveInMute,,ON
+
+
+;---exterenal audio controls: 0=none
+HKR,Config\MIXER,ExternalToneControls,,0
+HKR,Config\MIXER,lMasterBass,,32768
+HKR,Config\MIXER,rMasterBass,,32768
+HKR,Config\MIXER,lMasterTreble,,32768
+HKR,Config\MIXER,rMasterTreble,,32768
+HKR,Config\MIXER,lRearSpeakerVolume,,0
+HKR,Config\MIXER,rRearSpeakerVolume,,0
+
+
+;--------- for volume table-driven method-------
+HKR,Config\MIXER,AnalogGainTable,,%AnalogGainTable%
+HKR,Config\MIXER,DigitalGainTable,,%DigitalGainTable%
+HKR,Config\MIXER,SynthGainTable,,%SynthGainTable%
+HKR,Config\MIXER,MicGainTable,,%MicGainTable%
+HKR,Config\MIXER,MonoGainTable,,%MonoGainTable%
+HKR,Config\MIXER,DACGainTable,,%DACGainTable%
+HKR,Config\MIXER,DAC2GainTable,,%Dac2GainTable%
+HKR,Config\MIXER,MasterInGainTable,,%MasterInGainTable%
+HKR,Config\MIXER,MasterOutGainTable,,%MasterOutGainTable%
+HKR,Config\MIXER,Mode3MasterOutGainTable,,%Mode3MasterOutGainTable%
+
+;-----------this varible to control mode of  DSP serial port
+;0= disable, 1= enable, 2= enable and route analog sources to serial port
+;3 and 4 = settings for SPDIF output.
+
+HKR,Config\MIXER,EnableDSPSerialPort,,4
+
+;s/p dif control-------------------------------------------------------
+;set EnableDSPSerialPort = 3 to connect to analog sources.
+;set EnableDSPSerialPort = 4 to connect to dsp.
+
+;The SPDIF Category Code.
+;7-digit binary number represented as string of 1's and 0's.
+HKR,Config\MIXER,SPDIFCategory,,'0000000'
+
+;Boolean, ON=data is digital audio, OFF=data is non-audio.
+HKR,Config\MIXER,SPDIFIsAudio,,ON
+
+;Boolean, ON=Copying is permitted/copyright is not asserted.
+;OFF=Copying is inhibited/copyright is asserted.
+HKR,Config\MIXER,SPDIFPermitCopy,,ON
+
+;Boolean, ON=data is original/commercially pre-recorded.
+;OFF=no indication, 1st generation or higher
+HKR,Config\MIXER,SPDIFOriginalGeneration,,OFF
+
+;The level of pre-emphesis
+;Decimal Integer, 0=None, 1= 50/15us, 2-channel audio
+HKR,Config\MIXER,SPDIFPreemphesis,,0
+
+;------------------- end of new control values ------------------------
+
+HKR,Config\CONTROLS,JoystickRate,,0
+
+HKR,Config\RECORD,HighPassFilter,,Off
+HKR,Config\RECORD,Dither,,ON
+HKR,Config\CONTROLS,ShortNameLine,,%SMixCtrlSynth%
+HKR,Config\CONTROLS,LongNameLine,,%LMixCtrlSynth%
+HKR,Config\CONTROLS,ShortNameAux2,,%SMixCtrlCD%
+HKR,Config\CONTROLS,LongNameAux2,,%LMixCtrlCD%
+HKR,Config\CONTROLS,ShortNameMono,,%SMixCtrlSpkr%
+HKR,Config\CONTROLS,LongNameMono,,%LMixCtrlSpkr%
+HKR,Config\CONTROLS,ShortNameMic,,%SMixCtrlMic%
+HKR,Config\CONTROLS,LongNameMic,,%LMixCtrlMic%
+HKR,Config\CONTROLS,ShortNameLoopback,,%SMixCtrlLoop%
+HKR,Config\CONTROLS,LongNameLoopback,,%LMixCtrlLoop%
+HKR,Config\CONTROLS,SourceForLine,,Synthesizer
+HKR,Config\CONTROLS,SourceForAux1,,Auxiliary
+HKR,Config\CONTROLS,SourceForAux2,,CompactDisc
+HKR,Config\CONTROLS,SourceForMono,,PCSpeaker
+HKR,Config\CONTROLS,SourceForMic,,Microphone
+HKR,Config\CONTROLS,LongNameLineOut,,%LMixCtrlMaster%
+HKR,Config\CONTROLS,ShortNameLineOut,,%SMixCtrlMaster%
+HKR,Config\CONTROLS,LongNameMuxOut,,%LMixCtrlMux%
+HKR,Config\CONTROLS,ShortNameMuxOut,,%SMixCtrlMux%
+HKR,Config\CONTROLS,LongNameLowPriMuxOut,,%LMixCtrlLowPri%
+HKR,Config\CONTROLS,ShortNameLowPriMuxOut,,%SMixCtrlLowPri%
+HKR,Config\CONTROLS,ShortNameWave,,%SMixCtrlWave%
+HKR,Config\CONTROLS,LongNameWave,,%LMixCtrlWave%
+HKR,Config\CONTROLS,ShortNameMonitor,,%SMixCtrlMonitor%
+HKR,Config\CONTROLS,LongNameMonitor,,%LMixCtrlMonitor%
+;HKR,Config\CONTROLS,LongNameXCTL0,,%LMixCtrlX0%
+;HKR,Config\CONTROLS,ShortNameXCTL0,,%SMixCtrlX0%
+;HKR,Config\CONTROLS,LongNameXCTL1,,%LMixCtrlX1%
+;HKR,Config\CONTROLS,ShortNameXCTL1,,%SMixCtrlX1%
+HKR,Config\CONTROLS,LongNameKaraoke,,%LMixCtrlKaraoke%
+HKR,Config\CONTROLS,ShortNameKaraoke,,%SMixCtrlKaraoke%
+HKR,Config\CONTROLS,LongNameSysVol,,%LCtrlSysVol%
+HKR,Config\CONTROLS,ShortNameSysVol,,%SCtrlSysVol%
+HKR,Config\CONTROLS,LongNameMicBoost,,%LMixCtrlMicBoost%
+HKR,Config\CONTROLS,ShortNameMicBoost,,%SMixCtrlMicBoost%
+HKR,Config\CONTROLS,LongNameDspSYNTH,,%LMixCtrlDSPSynth%
+HKR,Config\CONTROLS,ShortNameDspSYNTH,,%SMixCtrlDSPSynth%
+HKR,Config\CONTROLS,LongNameDspWAVE,,%LMixCtrlDspWAVE%
+HKR,Config\CONTROLS,ShortNameDspWAVE,,%SMixCtrlDspWAVE%
+HKR,Config\CONTROLS,LongNameDac2,,%LMixCtrlDac2%
+HKR,Config\CONTROLS,ShortNameDac2,,%SMixCtrlDac2%
+HKR,Config\CONTROLS,LongNameZVPORT,,%LMixCtrlZVPORT%
+HKR,Config\CONTROLS,ShortNameZVPORT,,%SMixCtrlZVPORT%
+HKR,Config\CONTROLS,LongNameDigSYNTH,,%LMixCtrlDigSYNTH%
+HKR,Config\CONTROLS,ShortNameDigSYNTH,,%SMixCtrlDigSYNTH%
+
+; Uncomment the following to set timelimit for power down on idle
+; HKR,Config\CONTROLS,IdleTimer0H,,0
+; HKR,Config\CONTROLS,IdleTimer0L,,60000
+
+;
+; These controls are used to disable XCTLs when a device
+; has internal 3D circuitry.  This is to support customers
+; that use XCTLs to control external SRC circuitry.
+;
+HKR,Config\CONTROLS,DisableIf3DXCTL0,,OFF
+HKR,Config\CONTROLS,DisableIf3DXCTL1,,OFF
+;---------------- changes for symmetrical mixer -----------------------------jmh
+; used to be:
+;HKR,Config\CONTROLS,ShortNameAux1,,%SMixCtrlLine%
+;HKR,Config\CONTROLS,LongNameAux1,,%LMixCtrlLine%
+; now is
+HKR,Config\CONTROLS,ShortNameAux1,,%SMixCtrlAux1%
+HKR,Config\CONTROLS,LongNameAux1,,%LMixCtrlAux1%
+
+; specification of mode2 source lines that should be usable has changed to
+; a bit map, with '1' representing available and '0' representing not available.
+; The bit positions represent the lines indicated by the old-style setting.
+; For Playback, bit[0] (leftmost bit) == "Wave"
+;               bit[1]                == "Monitor"
+;               bit[2]                == "Mono"
+;               bit[3]                == "Line"
+;               bit[4]                == "Aux1"
+;               bit[5]                == "Aux2"
+; For Record,   bit[0] (leftmost bit) == "Line"
+;               bit[1]                == "Aux1"
+;               bit[2]                == "MixOut" (Loop)
+;               bit[3]                == "Mic"
+; used to be:
+;HKR,Config\CONTROLS,MixerSources,,"Wave,Monitor,Mono,Line,Aux1,Aux2"
+;HKR,Config\CONTROLS,InputSources,,"Line,Aux1,Loop,Mic"
+; now is
+HKR,Config\CONTROLS,MixerSources,,"111111"
+HKR,Config\CONTROLS,InputSources,,"1111"
+
+
+; for Mode3xxxSources, values are a bit map determining which source lines are
+; supposed to be supported. For Mode3MixerSources, the possibilities are:
+;   playback:  3D,DIG-SER,DIG-wave,DIG-synth,aux2,aux1,line-in,mic,mono
+;   record:     x,DIG-SER,DIG-wave,DIG-synth,aux2,aux1,line-in,mic,x
+; where x is just a placeholder to make the strings the same length and easier
+; to modify correctly. Note that if line-in is set to 0, it will be ganged
+; with the DIG-synth source.
+HKR,Config\CONTROLS,Mode3MixerSources,,"111111011"
+HKR,Config\CONTROLS,Mode3InputSources,,"x1111101x"
+
+HKR,Config\CONTROLS,ShortName3DSpace,,%SMixCtrl3DSpace%
+HKR,Config\CONTROLS,LongName3DSpace,,%LMixCtrl3DSpace%
+HKR,Config\CONTROLS,ShortName3DCenter,,%SMixCtrl3DCenter%
+HKR,Config\CONTROLS,LongName3DCenter,,%LMixCtrl3DCenter%
+HKR,Config\CONTROLS,ShortName3DMute,,%SMixCtrl3DMute%
+HKR,Config\CONTROLS,LongName3DMute,,%LMixCtrl3DMute%
+HKR,Config\CONTROLS,ShortNameDacSER,,%SMixCtrlDacSer%
+HKR,Config\CONTROLS,LongNameDacSER,,%LMixCtrlDacSER%
+HKR,Config\CONTROLS,ShortNameLine-in,,%SMixCtrlLine%
+HKR,Config\CONTROLS,LongNameLine-in,,%LMixCtrlLine%
+HKR,Config\CONTROLS,ShortNameMonoOutMute,,%SMixCtrlMonoOutMute%
+HKR,Config\CONTROLS,LongNameMonoOutMute,,%LMixCtrlMonoOutMute%
+
+
+HKR,Config\SNDSYS.DRV,SingleModeDMA,,0
+HKR,Config\SNDSYS.DRV,MsftHardware,,0
+HKR,Config\SNDSYS.DRV,MsftSupport,,1
+HKR,Config\SNDSYS.DRV,AutoSelect,,0
+HKR,Config\SNDSYS.DRV,MidiPlay,,1
+HKR,Config\SNDSYS.DRV,OldMSDosGameCompatibility,,1
+HKR,Config\SNDSYS.DRV,BlasterSupport,,CS4232
+HKR,Config\SNDSYS.DRV,Duplex,,Full
+HKR,Config\SNDSYS.DRV,OEMHardware,,
+HKR,Config\SNDSYS.DRV,FMMixer,,Line
+HKR,Config\SNDSYS.DRV,CDMixer,,Aux2
+HKR,Config\SNDSYS.DRV,LineMixer,,Aux1
+HKR,Config\SNDSYS.DRV,UseTypeFDMA,,ON
+HKR,Config\SNDSYS.DRV,PollHWMasterVol,,OFF
+HKR,Config\SNDSYS.DRV,UseMode3MastVolTable,,ON
+HKR,Config\SNDSYS.DRV,SBInitMixerSettings,,OFF
+HKR,Config\SNDSYS.DRV,SBVoiceVolumeLeft,,9
+HKR,Config\SNDSYS.DRV,SBVoiceVolumeRight,,9
+HKR,Config\SNDSYS.DRV,SBMasterVolumeLeft,,9
+HKR,Config\SNDSYS.DRV,SBMasterVolumeRight,,9
+HKR,Config\SNDSYS.DRV,SBFMVolumeLeft,,9
+HKR,Config\SNDSYS.DRV,SBFMVolumeRight,,9
+HKR,Config\SNDSYS.DRV,SBCDVolumeLeft,,1
+HKR,Config\SNDSYS.DRV,SBCDVolumeRight,,1
+HKR,Config\SNDSYS.DRV,SBLineInVolumeLeft,,1
+HKR,Config\SNDSYS.DRV,SBLineInVolumeRight,,1
+HKR,Config\SNDSYS.DRV,SBMicMixing,,0
+HKR,Config\SNDSYS.DRV,SBInputSelect,,0
+HKR,Config\SNDSYS.DRV,SBVSTC,,0
+HKR,Config\SNDSYS.DRV,RestoreWSSOnDosExit,,OFF
+HKR,Config\SNDSYS.DRV,MuteWhenDOSBoxLoosesFocus,,ON
+HKR,Config\SNDSYS.DRV,WriteConfigurationFile,,ON
+HKR,Config\SNDSYS.DRV,IgnoreStandby,,ON
+HKR,Config\SNDSYS.DRV,PowerDownBach,,ON
+HKR,Config\SNDSYS.DRV,ExternalAmpAPM,,OFF
+HKR,Config\SNDSYS.DRV,ResumePreserve,,0
+
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions\Crystal,,,%MSDOSConfig%
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions\Crystal,Config.Sys,,"device=%%WINDIR%%\cwdinit.exe /A"
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions\Crystal,Flags,1,07,00,00,00
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions\Crystal,Order,1,00,00,00,19
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions\Crystal,TipText,,%MSDOSTipText%
+
+[MIXER.AddReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,SystemTray,,"SysTray.Exe"
+HKLM,%KEY_IOC%\Vol,,,
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,cwdaudix.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+HKLM,%KEY_IOC%\acm,,,
+HKLM,%KEY_IOC%\Rec,,,
+HKLM,%KEY_IOC%\MPlay,,,
+
+[CWDINIT.UpdateCfgSys]
+;DevDelete=cwdinit.exe
+;DevAddDev=cwdinit.exe,device, 1, "/A"
+
+[*CSC0000.KnownDrivers]
+sndsys.drv
+cpqaudio.drv
+cs31ba11.drv
+nmcmssnd.drv
+mssndsys.drv
+
+[Power.CopyList]
+cwdpcple.dll,,
+
+[Power.AddReg]
+HKCR,"CLSID\{21838CA5-6877-11cf-9228-00A02407A140}",,,%PowerCPLName%
+HKCR,"CLSID\{21838CA5-6877-11cf-9228-00A02407A140}\InProcServer32",,,cwdpcple.dll
+HKCR,"CLSID\{21838CA5-6877-11cf-9228-00A02407A140}\InProcServer32","ThreadingModel",,"Apartment"
+;------------------------------------------------------------------------------
+; Uncomment the following line if you wish the Crystal Power Panel to appear
+; in the Control Panel Power Applet.
+;------------------------------------------------------------------------------
+;HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Power\shellex\PropertySheetHandlers\Crystal Semiconductor Power Control Panel Extension",,,{21838CA5-6877-11cf-9228-00A02407A140}
+
+[Cwd3dsnd.CopyList]
+Cwd3dsnd.exe,,
+
+[Cwd3dsnd.AddReg]
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset1","Description",,"Preset 1"
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset1","Center",,12
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset1","Space",,4
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset2","Description",,"Preset 2"
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset2","Center",,4
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset2","Space",,12
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset3","Description",,"Preset 3"
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset3","Center",,8
+HKLM,"SOFTWARE\Crystal\CW3DSnd\Preset3","Space",,8
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce","CW3DSoundInstall",,"%10%\Cwd3dsnd.exe -install"
+
+
+;--------------------------------------------------------------------------
+
+; CSC0011 is a combination of CSC0000 and CSC0001 on a Mobile Triton I
+; implementation using the Audio Port.
+
+[CSC0011_Device]
+DelFiles=WSS.DelList
+CopyFiles=WSS.CopyList,CSC0001.CopyList,Windir.CopyList,Power.CopyList
+AddReg=WAVE.AddReg, MIXER.AddReg, CSC0000.AddReg, WSS.AddReg, CSC0011.AddReg, Power.AddReg
+UpdateInis=WSS.UpdateInis,CSC0001.UpdateInis
+UpdateCfgSys=CWDINIT.UpdateCfgSys
+
+;
+; This Driver string will overwrite the standard one added in WAVE.AddReg..
+;
+[CSC0011.AddReg]
+HKR,,Driver,,"cwdaudix.vxd vjoyd.vxd"
+HKR,Drivers\joystick,,,
+HKR,Drivers\joystick\msjstick.drv,Description,,%*CSC0001.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,Subclasses,,"wave,midi,aux,mixer,joystick"
+HKLM,%KEY_OEM%\cwdjoy,OEMCallout,0,cwdjoy.vxd
+HKLM,%KEY_OEM%\cwdjoy,OEMData,1,1,0,0,0,8,0,0,0
+HKLM,%KEY_OEM%\cwdjoy,OEMName,0,%cwdjoy.DeviceDesc%
+HKLM,%KEY_OEM%\cwdjoy,OEMTESTWINCAP,0,%cwdjoy.DeviceTestDesc%
+HKLM,%KEY_OEM%\cwdjoy,OEMCALWINCAP,0,%cwdjoy.DeviceCalDesc%
+
+
+;--------------------------------------------------------------------------
+
+[CSC0001_Device]
+CopyFiles=CSC0001.CopyList
+AddReg=CSC0001.AddReg
+UpdateInis=CSC0001.UpdateInis
+
+[CSC0001.CopyList]
+msjstick.drv,,
+vjoyd.vxd,,
+
+[CSC0001.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%*CSC0001.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+HKLM,%KEY_OEM%\cwdjoy,OEMCallout,0,cwdjoy.vxd
+HKLM,%KEY_OEM%\cwdjoy,OEMData,1,1,0,0,0,8,0,0,0
+HKLM,%KEY_OEM%\cwdjoy,OEMName,0,%cwdjoy.DeviceDesc%
+HKLM,%KEY_OEM%\cwdjoy,OEMTESTWINCAP,0,%cwdjoy.DeviceTestDesc%
+HKLM,%KEY_OEM%\cwdjoy,OEMCALWINCAP,0,%cwdjoy.DeviceCalDesc%
+
+[CSC0001.UpdateInis]
+system.ini,drivers,"joystick="
+
+;--------------------------------------------------------------------------
+
+[CSC0010_Device]
+DelFiles=ControlPort.DelList
+CopyFiles=ControlPort.CopyList
+AddReg=ControlPort.AddReg
+
+[ControlPort.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,cwdaudix.vxd
+
+[ControlPort.DelList]
+cwdaudix.vxd,,,1
+
+[ControlPort.CopyList]
+cwdaudix.vxd,,
+
+;--------------------------------------------------------------------------
+
+[CSC0003_Device]
+DelFiles=MPU401.DelList
+CopyFiles=MPU401.CopyList
+AddReg=MIDI.AddReg, MPU401.AddReg, CSC0003.AddReg
+UpdateInis=MPU401.UpdateInis
+
+[MPU401.CopyList]
+cwdmidi.vxd,,
+cwdmidi.drv,,
+cwdaudix.vxd,,
+
+[MIDI.AddReg]
+HKR,,Devloader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+
+[MPU401.AddReg]
+HKR,,Driver,,"cwdmidi.vxd"
+HKR,Drivers\midi\cwdmidi.drv,Driver,,cwdmidi.drv
+;Comment out the next line if a Wavetable Synthesizer is present in the system
+HKR,Drivers\midi\cwdmidi.drv,External,1,01,00,00,00
+HKR,Drivers,SubClasses,,"midi"
+
+[CSC0003.AddReg]
+HKR,Drivers\midi\cwdmidi.drv,Description,,%*CSC0003.DeviceDesc%
+
+[MPU401.UpdateInis]
+system.ini,drivers,"midi*=mpu401.drv",,1
+
+[MPU401.DelList]
+msmpu401.vxd,,,1
+msmpu401.drv,,,1
+mpu401.drv,,,1
+
+;--------------------------------------------------------------------------
+[CSC000F_Device]
+
+;--------------------------------------------------------------------------
+[CSC0004_Device]
+AddReg = ESDI_AddReg
+
+[ESDI_AddReg]
+HKR,,DriverDesc,,"ESDI Port Driver"
+HKR,,DevLoader,,*IOS
+HKR,,PortDriver,,ESDI_506.pdr
+
+;--------------------------------------------------------------------------
+
+[DestinationDirs]
+WSS.CopyList = 11
+WSS.DelList = 11
+Windir.CopyList = 10
+Cwd3dsnd.CopyList = 10
+DefaultDestDir = 11	; LDID_SYS
+
+[SourceDisksNames]
+1=%SourceDiskName%,, 0001
+73170=WHQL,"",73170
+
+[SourceDisksFiles]
+cwdaudix.vxd=1
+cwdaudio.drv=1
+;cwdinit.exe=1
+cwdaudio.ini=1
+cwdaudio.bin=1
+cwdfm.drv=1
+cwdmix.exe=1
+cwdpcple.dll=1
+cwdmidi.vxd=1
+cwdmidi.drv=1
+Cwd3dsnd.exe=1
+cwdjoy.vxd=1
+IUSV2860.cat=73170
+
+[Strings]
+;Non-localized strings
+KEY_WARNVER="SYSTEM\CurrentControlSet\Control\SessionManager\WarnVerDLLs"
+KEY_CHKVER="SYSTEM\CurrentControlSet\Control\SessionManager\CheckVerDLLs"
+KEY_FIL="SYSTEM\CurrentControlSet\Control\MediaResources\FilterList"
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+cwdjoy.DeviceDesc="Crystal Digital Assisted Joystick"
+cwdjoy.DeviceTestDesc="Crystal Joystick Port Test"
+cwdjoy.DeviceCalDesc="Crystal Joystick Port Calibration"
+KEY_OEM="System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+
+;Localized strings
+MediaClassName="Sound, video and game controllers"
+CSMfgName="Crystal Semiconductor Corporation"
+*CSC0000.DeviceDesc="Crystal PnP Audio System CODEC"
+*CSCFFFF.DeviceDesc="Crystal PnP Audio System CODEC"
+*CSC0001.DeviceDesc="Crystal PnP Audio System Joystick"
+*CSC0010.DeviceDesc="Crystal PnP Audio System Control Registers"
+*CSC0003.DeviceDesc="Crystal PnP Audio System MPU-401 Compatible"
+*CSC0004.DeviceDesc="Crystal PnP IDE Controller"
+*CSC0011.DeviceDesc="Crystal PnP Audio System CODEC/Joystick"
+MSDOSTipText="Configures Sound Card for use in DOS"
+MSDOSConfig="Crystal Sound Card Configuration"
+PowerCPLName="Crystal Semiconductor Power Control Panel Extension"
+SourceDiskName="Crystal Driver Disk"
+*CSC000F.DeviceDesc="Disabled Device"
+V_CLSWAVEFORM="Audio"
+V_CLSMIDI="MIDI"
+V_CLSMIXER="Mixer"
+V_CLSAUX="Auxiliary"
+V_INTERNAL="FM Synthesis"
+V_EXTERNAL="External MIDI Port"
+SMixCtrlSynth="Synth"
+LMixCtrlSynth="Synth"
+SMixCtrlLine="Line"
+LMixCtrlLine="Line"
+SMixCtrlCD="CD"
+LMixCtrlCD="CD"
+SMixCtrlSpkr="Mono"
+LMixCtrlSpkr="Mono In"
+SMixCtrlMic="Mic"
+LMixCtrlMic="Mic"
+SMixCtrlLoop="MixOut"
+LMixCtrlLoop="MixOut"
+SMixCtrlMaster="Master"
+LMixCtrlMaster="Master Out"
+SMixCtrlMux="Record"
+LMixCtrlMux="Master Record"
+SMixCtrlLowPri="LowPriIn"
+LMixCtrlLowPri="Low Priority Input"
+SMixCtrlKaraoke="Karaoke"
+LMixCtrlKaraoke="Karaoke Mode"
+SMixCtrlX0="XCTL 0"
+LMixCtrlX0="XControl 0"
+SMixCtrlX1="XCTL 1"
+LMixCtrlX1="XControl 1"
+SCtrlSysVol="SystemVol"
+LCtrlSysVol="System Volume"
+SMixCtrlWave="Wave"
+LMixCtrlWave="Wave"
+SMixCtrlMonitor="Monitor"
+LMixCtrlMonitor="Monitor"
+SMixCtrlMicBoost="Mic Boost"
+LMixCtrlMicBoost="Microphone Boost"
+SMixCtrlDSPSynth="Synth"
+LMixCtrlDSPSynth="Synth"
+SMixCtrlDspWAVE="Wave"
+LMixCtrlDspWAVE="Wave"
+SMixCtrlDac2="Synth"
+LMixCtrlDac2="Synth"
+SMixCtrlZVPORT="ZVPORT"
+LMixCtrlZVPORT="ZVPORT"
+SMixCtrlDigSYNTH="DigSYNTH"
+LMixCtrlDigSYNTH="DigSYNTH"
+
+
+
+
+;-------------- new controls added for symmetrical mixer ----------jmh
+SMixCtrl3DCenter="Center"
+LMixCtrl3DCenter="3D Center"
+SMixCtrl3DSpace="Space"
+LMixCtrl3DSpace="3D Space"
+SMixCtrl3DMute="Mute"
+LMixCtrl3DMute="3D Mute"
+SMixCtrl3D="3D Effects"
+LMixCtrl3D="3D Effects"
+; the aux1 input is usually tied to the line jack
+SMixCtrlAux1="Line"
+LMixCtrlAux1="Line In"
+SMixCtrlMonoOutMute="MonoOut Mute"
+LMixCtrlMonoOutMute="PC Speaker Mute"
+SMixCtrlDacSER="Serial"
+LMixCtrlDacSER="Serial In"
+; optional names for a line-in that is not controlling synth
+SMixCtrlLine-in="Line"
+LMixCtrlLine-in="Line In"
+
+;-------------- tables added for volume slide rcontrol ----------msu
+;-----the values in the following table are editable to meet OEM needs
+;-----however, there are limits for all these tables, for analog table,
+;-----synth table and mic table, entries are ranged from 0 to 31, maximum
+;-----entries for those tables are 32 entries, for digital table and DAC
+;-----table, entries are ranged from 0 to 63, maximum entries number is 64,
+;----for mono table, entries are ranged from 0 to 13, maximum entries is 16,
+;----for masterin table, entries are ranged from 0 to 7, maximum entries is 16,
+;----for masterout table, entries are ranged from 0 to 25, maximum entries is 16. 
+; Mode3MasterOutGainTable - Entries range from 0 - 63. 16 entries Required.  57 = 0 db
+AnalogGainTable="31,20,17,15,14,13,12,11,10,10,9,9,8,7,7,6,6,6,6,5,5,5,4,4,4,3,3,3,2,2,1,1"
+DigitalGainTable="63,34,32,30,28,26,24,22,21,20,18,17,17,16,16,16,15,15,15,14,14,14,13,13,13,12,12,12,11,11,11,10,10,10,9,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+SynthGainTable="31,20,17,15,14,13,12,11,10,10,9,9,8,7,7,6,6,6,6,5,5,5,4,4,4,3,3,3,2,2,1,1"
+MicGainTable="31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0"
+DacGainTable="63,34,32,30,28,26,24,22,21,20,18,17,17,16,16,16,15,15,15,14,14,14,13,13,13,12,12,12,11,11,11,10,10,10,9,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+Dac2GainTable="31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0"
+MonoGainTable="13,11,8,6,5,5,4,4,3,3,2,2,1,1,0,0"
+MasterInGainTable="0,3,4,5,6,6,6,7"
+MasterOutGainTable="0,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
+Mode3MasterOutGainTable="0,20,24,30,33,37,39,41,43,45,47,49,51,53,55,57"

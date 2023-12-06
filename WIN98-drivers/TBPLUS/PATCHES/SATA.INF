@@ -1,0 +1,85 @@
+; Copyright (c) 1993-1995 Microsoft Corporation
+; Copyright (c) 2008-2015 Rudolph R. Loew
+
+[version]
+LayoutFile= Layout.inf, Layout1.inf, Layout2.inf
+signature="$CHICAGO$"
+Class=hdc
+ClassGUID={4d36e96a-e325-11ce-bfc1-08002be10318}
+Provider=%RL%
+
+;Class Install
+[ClassInstall]
+AddReg=HDC_Class
+
+[HDC_Class]
+HKR,,,,%HDCClassName%
+HKR,,Icon,,-9
+
+[Manufacturer]
+%RL-Drivers%=RL_HDC
+
+[RL_HDC]
+
+%PCI\CC_010185.DeviceDesc%= DUAL_GOODSATA, PCI\CC_010185;Generic PCI SATA
+%PCI\CC_01018F.DeviceDesc%= DUAL_GOODSATA, PCI\CC_01018F;Generic PCI SATA
+%MF\PrimarySATA.DeviceDesc% = GOODSATA, MF\PrimarySATA
+%MF\SecondarySATA.DeviceDesc% = GOODSATA, MF\SecondarySATA
+
+[GOODSATA]
+AddReg = SATA_AddReg
+
+[GOODSATA.HW]
+AddReg = SATA_FIFO_OK_AddReg
+
+[DUAL_GOODSATA]
+AddReg=PCIMF.Reg,IDEProp.Reg
+
+[DUAL_GOODSATA.HW]
+AddReg=DUAL_GOODSATA.RegHW
+
+[DUAL_GOODSATA.RegHW]
+HKR,Child0000,HardwareID,,MF\PrimarySATA
+HKR,Child0000,ResourceMap,1,00,01,02
+HKR,Child0000,VaryingResourceMap,1,06,00,00,00,00,08,00,00,00,01,00,00,00
+HKR,Child0000,MFFlags,1,0C,00,00,00
+HKR,Child0001,HardwareID,,MF\SecondarySATA
+HKR,Child0001,ResourceMap,1,03,04,02,05
+HKR,Child0001,VaryingResourceMap,1,06,08,00,00,00,08,00,00,00,01,00,00,00
+HKR,Child0001,MFFlags,1,0C,00,00,00
+HKR,,PCIDualIDE,1,01
+
+[IDEProp.Reg]
+HKR,,EnumPropPages,,"sysclass.dll,IDEEnumPropPages"
+
+[PCIMF.Reg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,Enumerator,,*CONFIGMG
+HKR,,CMDrivFlags,1,03,00,00,00
+
+[DontStopChild.RegHW]
+HKR,,ConfigFlags,1,80,00,00,00
+
+[SATA_FIFO_OK_AddReg]
+HKR,,IDENoSerialize,3,01
+
+[SATA_AddReg]
+HKR,,DriverDesc,,"SATA Port Driver"
+HKR,,DevLoader,,*IOS
+HKR,,PortDriver,,ESDI_506.pdr
+HKR,,ForceIRQSharing,3,01
+
+[HDC_HW_REG]
+HKR,,NoSetupUI,,1
+
+[ControlFlags]
+ExcludeFromSelect=MF\PrimarySATA,MF\SecondarySATA
+
+[Strings]
+HDCClassName            = "Hard disk controllers"
+RL                      = "RLoew"
+RL-Drivers= "(R. Loew / Microsoft hard disk drivers)"
+PCI\CC_010185.DeviceDesc  = "Standard Dual PCI SATA Controller"
+PCI\CC_01018F.DeviceDesc  = "Standard Dual PCI SATA Controller"
+MF\PrimarySATA.DeviceDesc= "Primary SATA controller"
+MF\SecondarySATA.DeviceDesc= "Secondary SATA controller"

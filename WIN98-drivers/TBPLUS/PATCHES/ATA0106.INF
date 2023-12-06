@@ -1,0 +1,83 @@
+; Copyright (c) 1993-1995 Microsoft Corporation
+; Copyright (c) 2009-2015 Rudolph R. Loew
+
+[version]
+LayoutFile= Layout.inf, Layout1.inf, Layout2.inf
+signature="$CHICAGO$"
+Class=hdc
+ClassGUID={4d36e96a-e325-11ce-bfc1-08002be10318}
+Provider=%RL%
+
+;Class Install
+[ClassInstall]
+AddReg=HDC_Class
+
+[HDC_Class]
+HKR,,,,%HDCClassName%
+HKR,,Icon,,-9
+
+[Manufacturer]
+%RL-Drivers%=RL_HDC
+
+[RL_HDC]
+
+%PCI\CC_0106.DeviceDesc%= DUAL_GOODATA0106, PCI\CC_0106;Generic PCI ATA0106
+%MF\PrimaryATA0106.DeviceDesc% = GOODATA0106, MF\PrimaryATA0106
+%MF\SecondaryATA0106.DeviceDesc% = GOODATA0106, MF\SecondaryATA0106
+
+[GOODATA0106]
+AddReg = ATA0106_AddReg
+
+[GOODATA0106.HW]
+AddReg = ATA0106_FIFO_OK_AddReg
+
+[DUAL_GOODATA0106]
+AddReg=PCIMF.Reg,IDEProp.Reg
+
+[DUAL_GOODATA0106.HW]
+AddReg=DUAL_GOODATA0106.RegHW
+
+[DUAL_GOODATA0106.RegHW]
+HKR,Child0000,HardwareID,,MF\PrimaryATA0106
+HKR,Child0000,ResourceMap,1,02,03,00
+HKR,Child0000,VaryingResourceMap,1,06,00,00,00,00,08,00,00,00,01,00,00,00
+HKR,Child0000,MFFlags,1,0C,00,00,00
+HKR,Child0001,HardwareID,,MF\SecondaryATA0106
+HKR,Child0001,ResourceMap,1,04,05,00
+HKR,Child0001,VaryingResourceMap,1,06,08,00,00,00,08,00,00,00,01,00,00,00
+HKR,Child0001,MFFlags,1,0C,00,00,00
+HKR,,PCIDualIDE,1,01
+
+[IDEProp.Reg]
+HKR,,EnumPropPages,,"sysclass.dll,IDEEnumPropPages"
+
+[PCIMF.Reg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,Enumerator,,*CONFIGMG
+HKR,,CMDrivFlags,1,03,00,00,00
+
+[DontStopChild.RegHW]
+HKR,,ConfigFlags,1,80,00,00,00
+
+[ATA0106_FIFO_OK_AddReg]
+HKR,,IDENoSerialize,3,01
+
+[ATA0106_AddReg]
+HKR,,DriverDesc,,"ATA0106 Port Driver"
+HKR,,DevLoader,,*IOS
+HKR,,PortDriver,,ESDI_506.pdr
+HKR,,ForceIRQSharing,3,01
+
+[HDC_HW_REG]
+HKR,,NoSetupUI,,1
+
+[ControlFlags]
+ExcludeFromSelect=MF\PrimaryATA0106,MF\SecondaryATA0106
+
+[Strings]
+HDCClassName            = "Hard disk controllers"
+RL                      = "RLoew"
+RL-Drivers= "(R. Loew / Microsoft hard disk drivers)"
+PCI\CC_0106.DeviceDesc  = "Standard Dual PCI ATA0106 Controller"
+MF\PrimaryATA0106.DeviceDesc= "Primary ATA0106 controller"
+MF\SecondaryATA0106.DeviceDesc= "Secondary ATA0106 controller"

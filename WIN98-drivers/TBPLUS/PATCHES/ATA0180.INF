@@ -1,0 +1,83 @@
+; Copyright (c) 1993-1995 Microsoft Corporation
+; Copyright (c) 2008-2015 Rudolph R. Loew
+
+[version]
+LayoutFile= Layout.inf, Layout1.inf, Layout2.inf
+signature="$CHICAGO$"
+Class=hdc
+ClassGUID={4d36e96a-e325-11ce-bfc1-08002be10318}
+Provider=%RL%
+
+;Class Install
+[ClassInstall]
+AddReg=HDC_Class
+
+[HDC_Class]
+HKR,,,,%HDCClassName%
+HKR,,Icon,,-9
+
+[Manufacturer]
+%RL-Drivers%=RL_HDC
+
+[RL_HDC]
+
+%PCI\CC_0180.DeviceDesc%= DUAL_GOODATA0180, PCI\CC_0180;Generic PCI ATA0180
+%MF\PrimaryATA0180.DeviceDesc% = GOODATA0180, MF\PrimaryATA0180
+%MF\SecondaryATA0180.DeviceDesc% = GOODATA0180, MF\SecondaryATA0180
+
+[GOODATA0180]
+AddReg = ATA0180_AddReg
+
+[GOODATA0180.HW]
+AddReg = ATA0180_FIFO_OK_AddReg
+
+[DUAL_GOODATA0180]
+AddReg=PCIMF.Reg,IDEProp.Reg
+
+[DUAL_GOODATA0180.HW]
+AddReg=DUAL_GOODATA0180.RegHW
+
+[DUAL_GOODATA0180.RegHW]
+HKR,Child0000,HardwareID,,MF\PrimaryATA0180
+HKR,Child0000,ResourceMap,1,00,02,03
+HKR,Child0000,VaryingResourceMap,1,06,00,00,00,00,08,00,00,00,01,00,00,00
+HKR,Child0000,MFFlags,1,0C,00,00,00
+HKR,Child0001,HardwareID,,MF\SecondaryATA0180
+HKR,Child0001,ResourceMap,1,00,04,05
+HKR,Child0001,VaryingResourceMap,1,06,08,00,00,00,08,00,00,00,01,00,00,00
+HKR,Child0001,MFFlags,1,0C,00,00,00
+HKR,,PCIDualIDE,1,01
+
+[IDEProp.Reg]
+HKR,,EnumPropPages,,"sysclass.dll,IDEEnumPropPages"
+
+[PCIMF.Reg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,Enumerator,,*CONFIGMG
+HKR,,CMDrivFlags,1,03,00,00,00
+
+[DontStopChild.RegHW]
+HKR,,ConfigFlags,1,80,00,00,00
+
+[ATA0180_FIFO_OK_AddReg]
+HKR,,IDENoSerialize,3,01
+
+[ATA0180_AddReg]
+HKR,,DriverDesc,,"ATA Mass Storage Port Driver"
+HKR,,DevLoader,,*IOS
+HKR,,PortDriver,,ESDI_506.pdr
+HKR,,ForceIRQSharing,3,01
+
+[HDC_HW_REG]
+HKR,,NoSetupUI,,1
+
+[ControlFlags]
+ExcludeFromSelect=MF\PrimaryATA0180,MF\SecondaryATA0180
+
+[Strings]
+HDCClassName            = "Hard disk controllers"
+RL                      = "RLoew"
+RL-Drivers= "(R. Loew / Microsoft hard disk drivers)"
+PCI\CC_0180.DeviceDesc  = "Standard Dual PCI ATA0180 Controller"
+MF\PrimaryATA0180.DeviceDesc= "Primary ATA Mass Storage controller"
+MF\SecondaryATA0180.DeviceDesc= "Secondary ATA Mass Storage controller"
