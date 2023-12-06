@@ -80,7 +80,7 @@ Download Windows 98 SE from [WinWorldPC][winworldpc-win98]. Product keys are the
 Prepare a bootable DOS drive (see the [DOS](#dos) section above), copy the `WIN98` folder over to the drive and run the `SETUP.EXE` from within.
 
 Note: at some point during the installation, you'll get a crash. This is due to the IDE driver being incompatible with the Vortex86EX's IDE controller.  
-Reboot, and choose "Safe Mode". From within Win98, install the "TBPLUS" drivers from R. Loew and then reboot again and complete the installation.  
+Reboot, and choose "Safe Mode". From within Win98, install the [TBPLUS](WIN98-drivers/TBPLUS) drivers from R. Loew and then reboot again and complete the installation.  
   
 An easier way is to install Windows 98 SE is using a [version I've prepared](WIN98) which has the IDE drivers "slipstreamed" (meaning that Windows will install the updated drivers automatically).
 
