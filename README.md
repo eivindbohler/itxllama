@@ -20,6 +20,7 @@ For feedback, suggestions, etc. - please add a post to the [Vogons thread][vogon
   * [USB](#usb)
   * [Crystal Audio](#crystal-audio)
   * [Ethernet](#ethernet)
+- [Fans](#fans)
 
 ## Installing the SOM
 When installing the Vortex86EX SOM, _carefully_ align the module as shown in the image below, and _gently_ push it down on the 64 pins.  
@@ -37,7 +38,7 @@ For changing the configuration, here's a quick walkthrough of the different jump
 ### PS/2 or USB HID
 Jumpers: J7, J12, J15, J16
 <p>
-  <img src=images/usb-ps2.jpg title="SOM alignment" width=50%>
+  <img src=images/usb-ps2.jpg title="PS/2 configuration" width=50%>
 </p>
 If you want to use a real PS/2 keyboard connected to the purple PS/2 port, place the two topmost jumpers (J15 and J16) to the leftmost position ("PS/2"). For USB HID keyboard connected to one of the white USB ports (between the PS/2 and serial port), place the jumpers to the rightmost side ("USB").  
 Same goes for PS/2 mouse and jumpers J7 and J12.
@@ -45,7 +46,7 @@ Same goes for PS/2 mouse and jumpers J7 and J12.
 ### Line In
 Jumpers: J39, J40
 <p>
-  <img src=images/line-in.jpg title="SOM alignment" width=50%>
+  <img src=images/line-in.jpg title="Line In" width=50%>
 </p>
 If you want to use an external audio source connected to the blue 3.5mm jack port, place both jumpers to the leftmost position ("EXT").  
 For using a Raspberry Pi Zero2 or Wavetable board as line-in to the sound card, place the two jumpers to the rightmost position ("INT").
@@ -53,7 +54,7 @@ For using a Raspberry Pi Zero2 or Wavetable board as line-in to the sound card, 
 ### Pi or Wavetable
 Jumpers: J25, J26, J27
 <p>
-  <img src=images/pi-wt.jpg title="SOM alignment" width=50%>
+  <img src=images/pi-wt.jpg title="PI/WT configuration" width=50%>
 </p>
 For using a Raspberry Pi (Zero2, 3 or 4) for converting MIDI to analog audio, place the three jumpers to the rightmost position ("PI").  
 For using a wavetable board, place the jumpers to the leftmost position ("WT").
@@ -119,6 +120,19 @@ Run `SETUP.EXE` from the [Crystal Audio](WIN98-drivers/CWD-v286-1998-itx-llama) 
 
 ### Ethernet
 From Device Manager, find the Ethernet device and install the [RDC R6040 driver](WIN98-drivers/r6040_win98).
+
+## Fans
+The Vortex86EX SOM doesn't draw much power, and shouldn't require active cooling if running at or below 300 MHz.  
+If you do wish to add one or more fans, the motherboard has three separately controllable 4-pin PWM fan connectors:
+<p>
+  <img src=images/fan-1.jpg title="Fan header" width=50%>
+</p>
+Simply connect a modern 4-pin fan to one of these headers, and set the corresponding jumper to either 5V or 12V:
+<p>
+  <img src=images/fan-2.jpg title="Fan configuration" width=50%>
+</p>
+
+Note: Take care **not** to supply 12V to a 5V fan - you'll likely fry it.
 
 [balena-etcher]: https://www.balena.io/etcher
 [winworldpc-win98]: https://winworldpc.com/download/417d71c2-ae18-c39a-11c3-a4e284a2c3a5
