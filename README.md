@@ -1,7 +1,7 @@
 # ITX-Llama User's Guide
   
 > **Note**  
-> This document is still a work-in-progress.  
+> This document is still a work in progress.  
 For feedback, suggestions, etc. - please add a post to the [Vogons thread][vogons-thread].
 
 ### Contents
@@ -21,6 +21,7 @@ For feedback, suggestions, etc. - please add a post to the [Vogons thread][vogon
   * [Crystal Audio](#crystal-audio)
   * [Ethernet](#ethernet)
 - [Fans](#fans)
+- [mt32-pi](#mt32-pi)
 
 ## Installing the SOM
 When installing the Vortex86EX SOM, _carefully_ align the module as shown in the image below, and _gently_ push it down on the 64 pins.  
@@ -134,7 +135,18 @@ Simply connect a modern 4-pin fan to one of these headers, and set the correspon
 
 Note: Take care **not** to supply 12V to a 5V fan - you'll likely fry it.
 
+## mt32-pi
+If you want to use a Raspberry Pi as an MT-32 or MIDI synthesizer, download and install the [mt32-pi][mt32-pi] bare-metal software on the Pi, and plug it into the motherboard.  
+If you go with a Pi Zero 2 (the easiest and cheapest option), make sure to solder the 40-pin connector to the _bottom_ side of the Pi, as seen here:
+<p>
+  <img src=images/pi-zero2-alignment.jpg title="Pi Zero 2 alignment" width=50%>
+</p>
+
+Look at the [mt32-pi github page][mt32-pi] for setup, configuration options etc.  
+Use the [mt32-pi-control][mt32-pi-control] software from DOS to switch between MT-32 and MIDI mode.
+
 [balena-etcher]: https://www.balena.io/etcher
 [winworldpc-win98]: https://winworldpc.com/download/417d71c2-ae18-c39a-11c3-a4e284a2c3a5
-
 [vogons-thread]: https://www.vogons.org/viewtopic.php?t=93480
+[mt32-pi]: https://github.com/dwhinham/mt32-pi
+[mt32-pi-control]: https://github.com/gmcn42/mt32-pi-control/tree/main/dos_bin
