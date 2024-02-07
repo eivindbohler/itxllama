@@ -1,0 +1,13 @@
+(footprint "H_ATX" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr through_hole)
+  (fp_text reference "REF**" (at 0 -5.08 unlocked) (layer "F.SilkS") hide
+      (effects (font (size 1.016 1.016) (thickness 0.2032) bold))
+    (tstamp f235793b-1e7f-41a7-b324-354c2f504550)
+  )
+  (fp_text value "H_ATX" (at 0 5.08 unlocked) (layer "F.Fab") hide
+      (effects (font (size 1.016 0.9144) (thickness 0.2032) bold italic))
+    (tstamp 813b5a59-1ff3-42b3-b078-e2ddacead8b3)
+  )
+  (pad "1" thru_hole circle (at 0 0) (size 6.35 6.35) (drill 4) (layers "*.Cu" "*.Mask") (tstamp 9546877a-6bd4-47f5-a16d-e2717138d1e3))
+)
