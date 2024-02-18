@@ -143,6 +143,10 @@ If you go with a Pi Zero 2 (the easiest and cheapest option), make sure to solde
 </p>
 
 Look at the [mt32-pi github page][mt32-pi] for setup, configuration options etc.  
+As a minimum, you want to set the output of the mt32-pi as type "i2s":
+```
+output_device = i2s
+```  
 Use the [mt32-pi-control][mt32-pi-control] software from DOS to switch between MT-32 and MIDI mode.
 
 [balena-etcher]: https://www.balena.io/etcher
