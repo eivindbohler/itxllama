@@ -1,0 +1,3 @@
+[submodule "rp2040/Pico-PIO-USB"]
+	path = rp2040/Pico-PIO-USB
+	url = https://github.com/sekigon-gonnoc/Pico-PIO-USB
