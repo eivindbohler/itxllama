@@ -5,6 +5,7 @@
 For feedback, suggestions, etc. - please add a post to the [Vogons thread][vogons-thread].
 
 ### Contents
+- [Building your own](building.md)
 - [Installing the SOM](#installing-the-som)
 - [Jumper Configuration](#jumper-configuration)
   * [PS/2 and USB HID](#ps2-or-usb-hid)
