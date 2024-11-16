@@ -1,5 +1,7 @@
 *.swp
 .DS_Store
+.idea
 
 kicad/*-backups
 kicad/*-cache
+/rp2040/build
