@@ -43,7 +43,7 @@ int main() {
   tuh_init(0);
 
   pio_usb_configuration_t pio_cfg = PIO_USB_DEFAULT_CONFIG;
-  pio_cfg.pin_dp = 19; // 24
+  pio_cfg.pin_dp = 24;
   tuh_configure(1, TUH_CFGID_RPI_PIO_USB_CONFIGURATION, &pio_cfg);
   tuh_init(1);
 
