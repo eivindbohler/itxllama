@@ -40,6 +40,7 @@ int main() {
   stdio_init_all();
   printf("ITX-Llama RP2040 USB-to-PS/2 (%s-%s)\r\n", PICO_PROGRAM_NAME, PICO_PROGRAM_VERSION_STRING);
 
+  tuh_hid_set_default_protocol(HID_PROTOCOL_REPORT);
   tuh_init(0);
 
   pio_usb_configuration_t pio_cfg = PIO_USB_DEFAULT_CONFIG;
