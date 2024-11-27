@@ -19,7 +19,7 @@ project(${target_name} C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-add_executable(${target_name} main.c ps2x2pico/src/usbin.c ps2x2pico/src/scancodesets.c ps2x2pico/src/ps2kb.c ps2x2pico/src/ps2ms.c ps2x2pico/src/ps2out.c)
+add_executable(${target_name} main.c ps2x2pico/src/usbin.c ps2x2pico/src/scancodes.c ps2x2pico/src/ps2kb.c ps2x2pico/src/ps2ms.c ps2x2pico/src/ps2out.c)
 
 target_sources(${target_name} PRIVATE
  # can use 'tinyusb_pico_pio_usb' library later when pico-sdk is updated
