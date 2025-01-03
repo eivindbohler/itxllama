@@ -31,40 +31,52 @@
 #endif
 
 //--------------------------------------------------------------------
-// COMMON CONFIGURATION
+// Common Configuration
 //--------------------------------------------------------------------
 
-#define CFG_TUSB_OS               OPT_OS_PICO
+#define CFG_TUSB_MCU          OPT_MCU_RP2040
+#define CFG_TUSB_OS           OPT_OS_PICO
 
-// Enable host stack
-#define CFG_TUH_ENABLED         1
-#define CFG_TUH_RPI_PIO_USB     1
-#define CFG_TUH_RPI_DUAL_USB    1
+// Enable Host stack
+#define CFG_TUH_ENABLED       1
+#define CFG_TUH_RPI_PIO_USB   1
+#define CFG_TUH_RPI_DUAL_USB  1
+#define BOARD_TUH_RHPORT      0
+#define CFG_TUSB_RHPORT0_MODE (OPT_MODE_HOST | OPT_MODE_FULL_SPEED)
+#define CFG_TUSB_RHPORT1_MODE (OPT_MODE_HOST | OPT_MODE_FULL_SPEED)
 
-#ifndef CFG_TUSB_MEM_SECTION
-#define CFG_TUSB_MEM_SECTION
+// RHPort max operational speed can defined by board.mk
+#ifndef BOARD_TUH_MAX_SPEED
+#define BOARD_TUH_MAX_SPEED   OPT_MODE_DEFAULT_SPEED
 #endif
 
-#ifndef CFG_TUSB_MEM_ALIGN
-#define CFG_TUSB_MEM_ALIGN          __attribute__ ((aligned(4)))
+// Default is max speed that hardware controller could support with on-chip PHY
+#define CFG_TUH_MAX_SPEED     BOARD_TUH_MAX_SPEED
+
+#ifndef CFG_TUH_MEM_SECTION
+#define CFG_TUH_MEM_SECTION
 #endif
 
-//#define CFG_TUSB_DEBUG              2
+#ifndef CFG_TUH_MEM_ALIGN
+#define CFG_TUH_MEM_ALIGN     __attribute__ ((aligned(4)))
+#endif
 
 //--------------------------------------------------------------------
-// HOST CONFIGURATION
+// Driver Configuration
 //--------------------------------------------------------------------
 
 // Size of buffer to hold descriptors and other data used for enumeration
 #define CFG_TUH_ENUMERATION_BUFSIZE 256
 
-#define CFG_TUH_HUB                 2
-// max device support (excluding hub device)
-#define CFG_TUH_DEVICE_MAX          (CFG_TUH_HUB * 4) // hub typically has 4 ports
+#define CFG_TUH_HUB                 2 // number of supported hubs
+#define CFG_TUH_HID                 (4*CFG_TUH_DEVICE_MAX) // typical keyboard + mouse device can have 3-4 HID interfaces
 
-#define CFG_TUH_HID                  4
-#define CFG_TUH_HID_EPIN_BUFSIZE    64
-#define CFG_TUH_HID_EPOUT_BUFSIZE   64
+// max device support (excluding hub device): 1 hub typically has 4 ports
+#define CFG_TUH_DEVICE_MAX          (3*CFG_TUH_HUB + 1)
+
+//------------- HID -------------//
+#define CFG_TUH_HID_EPIN_BUFSIZE    128
+#define CFG_TUH_HID_EPOUT_BUFSIZE   128
 
 #ifdef __cplusplus
  }
