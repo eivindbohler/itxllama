@@ -242,17 +242,20 @@ void processI2C(void) {
       case I2C_LED_ENABLED_REG: {
         global_led_enabled = byte;
         EEPROM.update(EEPROM_LED_ENABLED_ADDRESS, byte);
+        delay(5);
         break;
       }
       case I2C_LED_INTENSITY_REG: {
         red_led_pwm_duty = byte;
         green_led_pwm_duty = byte;
         EEPROM.update(EEPROM_LED_INTENSITY_ADDRESS, byte);
+        delay(5);
         break;
       }
       case I2C_CLICK_ENABLED_REG: {
         global_click_enabled = byte;
         EEPROM.update(EEPROM_CLICK_ENABLED_ADDRESS, byte);
+        delay(5);
         break;
       }
       default: break;
@@ -264,9 +267,12 @@ void processI2C(void) {
 
 void load_eeprom_values(void) {
   uint8_t led_values_modified = EEPROM.read(EEPROM_LED_VALUES_MODIFIED_ADDRESS);
+  delay(5);
   if (led_values_modified == EEPROM_MODIFIED_MAGIC_BYTE) {
     global_led_enabled = EEPROM.read(EEPROM_LED_ENABLED_ADDRESS);
+    delay(5);
     uint8_t led_intensity = EEPROM.read(EEPROM_LED_INTENSITY_ADDRESS);
+    delay(5);
     red_led_pwm_duty = led_intensity;
     green_led_pwm_duty = led_intensity;
   } else {
@@ -279,8 +285,10 @@ void load_eeprom_values(void) {
   }
 
   uint8_t click_values_modified = EEPROM.read(EEPROM_CLICK_VALUES_MODIFIED_ADDRESS);
+  delay(5);
   if (click_values_modified == EEPROM_MODIFIED_MAGIC_BYTE) {
     global_click_enabled = EEPROM.read(EEPROM_CLICK_ENABLED_ADDRESS);
+    delay(5);
   } else {
     EEPROM.update(EEPROM_CLICK_ENABLED_ADDRESS, CLICK_DEFAULT_ENABLED);
     delay(5);
