@@ -38,6 +38,7 @@ target_compile_definitions(${target_name} PRIVATE PIO_USB_USE_TINYUSB)
 pico_set_program_name(${target_name} ${target_name})
 pico_set_program_version(${target_name} ${target_version})
 
+add_compile_definitions(PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64)
 add_compile_definitions(PICO_DEFAULT_UART_TX_PIN=12)
 add_compile_definitions(PICO_DEFAULT_UART_RX_PIN=13)
 
