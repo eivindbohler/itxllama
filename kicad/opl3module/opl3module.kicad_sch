@@ -13885,7 +13885,6 @@
 	)
 	(label "_FM3_D0"
 		(at 228.6 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13896,7 +13895,6 @@
 	)
 	(label "_FM4_D5"
 		(at 266.7 250.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13907,7 +13905,6 @@
 	)
 	(label "_FM3_A0"
 		(at 228.6 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13918,7 +13915,6 @@
 	)
 	(label "_FM6_D3"
 		(at 444.5 252.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13929,7 +13925,6 @@
 	)
 	(label "YAC4_CLK"
 		(at 270.51 309.88 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13940,7 +13935,6 @@
 	)
 	(label "YAC6_CH2"
 		(at 478.79 355.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13951,7 +13945,6 @@
 	)
 	(label "_FM_D0"
 		(at 50.8 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13962,7 +13955,6 @@
 	)
 	(label "~{_FM4_RD}"
 		(at 228.6 257.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13973,7 +13965,6 @@
 	)
 	(label "~{_BRESET6}"
 		(at 405.13 312.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13984,7 +13975,6 @@
 	)
 	(label "_FM6_D2"
 		(at 448.31 335.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13995,7 +13985,6 @@
 	)
 	(label "_FM3_D2"
 		(at 270.51 157.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14006,7 +13995,6 @@
 	)
 	(label "_FM_D6"
 		(at 50.8 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14017,7 +14005,6 @@
 	)
 	(label "~{_BRESET4}"
 		(at 228.6 245.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14028,7 +14015,6 @@
 	)
 	(label "_FM5_SYNTH_L"
 		(at 471.17 180.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14039,7 +14025,6 @@
 	)
 	(label "_FM6_A0"
 		(at 405.13 314.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14050,7 +14035,6 @@
 	)
 	(label "YAC2_CH1"
 		(at 48.26 355.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14061,7 +14045,6 @@
 	)
 	(label "_FM4_D0"
 		(at 227.33 330.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14072,7 +14055,6 @@
 	)
 	(label "YAC6_CH2"
 		(at 495.3 320.04 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14083,7 +14065,6 @@
 	)
 	(label "YAC5_CH1"
 		(at 495.3 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14094,7 +14075,6 @@
 	)
 	(label "_FM3_D2"
 		(at 228.6 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14105,7 +14085,6 @@
 	)
 	(label "_FM2_SYNTH_L"
 		(at 88.9 242.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14116,7 +14095,6 @@
 	)
 	(label "_FM_A0"
 		(at 49.53 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14127,7 +14105,6 @@
 	)
 	(label "YAC6_CH1"
 		(at 495.3 322.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14138,7 +14115,6 @@
 	)
 	(label "_FM5_D0"
 		(at 406.4 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14149,7 +14125,6 @@
 	)
 	(label "~{_FM4_RD}"
 		(at 227.33 322.58 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14160,7 +14135,6 @@
 	)
 	(label "_FM6_D6"
 		(at 448.31 325.12 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14171,7 +14145,6 @@
 	)
 	(label "_FM_A1"
 		(at 49.53 139.7 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14182,7 +14155,6 @@
 	)
 	(label "_FM3_SYNTH_R"
 		(at 228.6 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14193,7 +14165,6 @@
 	)
 	(label "_FM3_A0"
 		(at 227.33 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14204,7 +14175,6 @@
 	)
 	(label "_FM3_D1"
 		(at 266.7 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14215,7 +14185,6 @@
 	)
 	(label "_FM_D3"
 		(at 92.71 154.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14226,7 +14195,6 @@
 	)
 	(label "_FM_SYNTH_R"
 		(at 50.8 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14237,7 +14205,6 @@
 	)
 	(label "_FM6_A1"
 		(at 405.13 317.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14248,7 +14215,6 @@
 	)
 	(label "_FM5_A1"
 		(at 405.13 139.7 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14259,7 +14225,6 @@
 	)
 	(label "_FM3_D6"
 		(at 270.51 147.32 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14270,7 +14235,6 @@
 	)
 	(label "~{_BRESET}"
 		(at 49.53 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14281,7 +14245,6 @@
 	)
 	(label "_FM4_D1"
 		(at 227.33 332.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14292,7 +14255,6 @@
 	)
 	(label "~{_FM4_CS}"
 		(at 227.33 325.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14303,7 +14265,6 @@
 	)
 	(label "_FM5_D3"
 		(at 444.5 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14314,7 +14275,6 @@
 	)
 	(label "_FM2_D1"
 		(at 88.9 255.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14325,7 +14285,6 @@
 	)
 	(label "~{_FM2_WR}"
 		(at 88.9 260.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14336,7 +14295,6 @@
 	)
 	(label "~{_FM6_WR}"
 		(at 444.5 260.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14347,7 +14305,6 @@
 	)
 	(label "_FM6_D1"
 		(at 405.13 332.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14358,7 +14315,6 @@
 	)
 	(label "_FM_D2"
 		(at 92.71 157.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14369,7 +14325,6 @@
 	)
 	(label "~{_BRESET}"
 		(at 50.8 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14380,7 +14335,6 @@
 	)
 	(label "_FM6_SYNTH_R"
 		(at 406.4 242.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14391,7 +14345,6 @@
 	)
 	(label "_FM6_SYNTH_R"
 		(at 546.1 358.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14402,7 +14355,6 @@
 	)
 	(label "YAC3_CH1"
 		(at 317.5 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14413,7 +14365,6 @@
 	)
 	(label "_FM5_D5"
 		(at 448.31 149.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14424,7 +14375,6 @@
 	)
 	(label "_FM5_D0"
 		(at 405.13 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14435,7 +14385,6 @@
 	)
 	(label "~{_FM3_RD}"
 		(at 228.6 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14446,7 +14395,6 @@
 	)
 	(label "_FM6_A0"
 		(at 406.4 262.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14457,7 +14405,6 @@
 	)
 	(label "_FM2_A0"
 		(at 50.8 262.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14468,7 +14415,6 @@
 	)
 	(label "YFM4_CLK"
 		(at 270.51 307.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14479,7 +14425,6 @@
 	)
 	(label "_FM2_D7"
 		(at 92.71 322.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14490,7 +14435,6 @@
 	)
 	(label "_FM2_D2"
 		(at 50.8 252.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14501,7 +14445,6 @@
 	)
 	(label "YAC5_CH2"
 		(at 495.3 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14512,7 +14455,6 @@
 	)
 	(label "YAC2_CH2"
 		(at 123.19 355.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14523,7 +14465,6 @@
 	)
 	(label "YAC3_CH1"
 		(at 226.06 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14534,7 +14475,6 @@
 	)
 	(label "~{_FM_WR}"
 		(at 88.9 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14545,7 +14485,6 @@
 	)
 	(label "_FM6_D1"
 		(at 444.5 255.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14556,7 +14495,6 @@
 	)
 	(label "_FM_D4"
 		(at 92.71 152.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14567,7 +14505,6 @@
 	)
 	(label "_FM4_D2"
 		(at 270.51 335.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14578,7 +14515,6 @@
 	)
 	(label "_FM4_D4"
 		(at 270.51 330.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14589,7 +14525,6 @@
 	)
 	(label "_FM6_D0"
 		(at 406.4 255.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14600,7 +14535,6 @@
 	)
 	(label "~{_FM5_RD}"
 		(at 405.13 144.78 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14611,7 +14545,6 @@
 	)
 	(label "~{_FM3_CS}"
 		(at 266.7 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14622,7 +14555,6 @@
 	)
 	(label "~{_BRESET5}"
 		(at 406.4 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14633,7 +14565,6 @@
 	)
 	(label "YFM_CLK"
 		(at 146.05 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14644,7 +14575,6 @@
 	)
 	(label "~{_FM2_CS}"
 		(at 88.9 257.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14655,7 +14585,6 @@
 	)
 	(label "_FM2_SYNTH_R"
 		(at 50.8 242.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14666,7 +14595,6 @@
 	)
 	(label "~{_FM5_CS}"
 		(at 405.13 147.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14677,7 +14605,6 @@
 	)
 	(label "_FM_D3"
 		(at 88.9 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14688,7 +14615,6 @@
 	)
 	(label "_FM3_SYNTH_R"
 		(at 368.3 180.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14699,7 +14625,6 @@
 	)
 	(label "_FM6_D2"
 		(at 406.4 252.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14710,7 +14635,6 @@
 	)
 	(label "~{_FM5_WR}"
 		(at 405.13 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14721,7 +14645,6 @@
 	)
 	(label "_FM_D4"
 		(at 50.8 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14732,7 +14655,6 @@
 	)
 	(label "YFM4_CLK"
 		(at 323.85 255.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14743,7 +14665,6 @@
 	)
 	(label "_FM2_D5"
 		(at 88.9 250.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14754,7 +14675,6 @@
 	)
 	(label "~{_FM6_RD}"
 		(at 405.13 322.58 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14765,7 +14685,6 @@
 	)
 	(label "_FM2_D6"
 		(at 50.8 247.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14776,7 +14695,6 @@
 	)
 	(label "_FM3_A1"
 		(at 228.6 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14787,7 +14705,6 @@
 	)
 	(label "~{_FM3_WR}"
 		(at 266.7 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14798,7 +14715,6 @@
 	)
 	(label "YFM3_CLK"
 		(at 270.51 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14809,7 +14725,6 @@
 	)
 	(label "_FM4_A1"
 		(at 228.6 260.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14820,7 +14735,6 @@
 	)
 	(label "_FM6_D7"
 		(at 444.5 247.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14831,7 +14745,6 @@
 	)
 	(label "_FM4_D6"
 		(at 270.51 325.12 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14842,7 +14755,6 @@
 	)
 	(label "YAC_CH1"
 		(at 48.26 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14853,7 +14765,6 @@
 	)
 	(label "_FM3_D7"
 		(at 266.7 69.85 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14864,7 +14775,6 @@
 	)
 	(label "_FM5_D1"
 		(at 444.5 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14875,7 +14785,6 @@
 	)
 	(label "YFM2_CLK"
 		(at 92.71 307.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14886,7 +14795,6 @@
 	)
 	(label "YAC2_CH1"
 		(at 139.7 322.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14897,7 +14805,6 @@
 	)
 	(label "YFM6_CLK"
 		(at 501.65 255.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14908,7 +14815,6 @@
 	)
 	(label "YAC3_CH2"
 		(at 317.5 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14919,7 +14825,6 @@
 	)
 	(label "_FM3_D3"
 		(at 266.7 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14930,7 +14835,6 @@
 	)
 	(label "_FM4_D0"
 		(at 228.6 255.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14941,7 +14845,6 @@
 	)
 	(label "_FM4_D5"
 		(at 270.51 327.66 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14952,7 +14855,6 @@
 	)
 	(label "_FM5_A0"
 		(at 406.4 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14963,7 +14865,6 @@
 	)
 	(label "YFM2_CLK"
 		(at 146.05 255.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14974,7 +14875,6 @@
 	)
 	(label "_FM2_D3"
 		(at 88.9 252.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14985,7 +14885,6 @@
 	)
 	(label "~{_FM5_RD}"
 		(at 406.4 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14996,7 +14895,6 @@
 	)
 	(label "_FM4_SYNTH_L"
 		(at 293.37 358.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15007,7 +14905,6 @@
 	)
 	(label "_FM5_A1"
 		(at 406.4 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15018,7 +14915,6 @@
 	)
 	(label "YAC4_CH2"
 		(at 300.99 355.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15029,7 +14925,6 @@
 	)
 	(label "~{_BRESET2}"
 		(at 50.8 245.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15040,7 +14935,6 @@
 	)
 	(label "~{_FM3_CS}"
 		(at 227.33 147.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15051,7 +14945,6 @@
 	)
 	(label "_FM3_D3"
 		(at 270.51 154.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15062,7 +14955,6 @@
 	)
 	(label "YAC_CLK"
 		(at 92.71 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15073,7 +14965,6 @@
 	)
 	(label "_FM_SYNTH_L"
 		(at 115.57 180.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15084,7 +14975,6 @@
 	)
 	(label "_FM4_D3"
 		(at 270.51 332.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15095,7 +14985,6 @@
 	)
 	(label "YAC5_CLK"
 		(at 448.31 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15106,7 +14995,6 @@
 	)
 	(label "YAC_CH2"
 		(at 139.7 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15117,7 +15005,6 @@
 	)
 	(label "_FM3_SYNTH_L"
 		(at 293.37 180.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15128,7 +15015,6 @@
 	)
 	(label "_FM5_D6"
 		(at 406.4 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15139,7 +15025,6 @@
 	)
 	(label "~{_FM6_CS}"
 		(at 444.5 257.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15150,7 +15035,6 @@
 	)
 	(label "_FM_D7"
 		(at 92.71 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15161,7 +15045,6 @@
 	)
 	(label "_FM_SYNTH_R"
 		(at 190.5 180.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15172,7 +15055,6 @@
 	)
 	(label "YFM5_CLK"
 		(at 501.65 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15183,7 +15065,6 @@
 	)
 	(label "_FM6_SYNTH_L"
 		(at 444.5 242.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15194,7 +15075,6 @@
 	)
 	(label "_FM6_D3"
 		(at 448.31 332.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15205,7 +15085,6 @@
 	)
 	(label "_FM5_SYNTH_L"
 		(at 444.5 64.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15216,7 +15095,6 @@
 	)
 	(label "_FM2_SYNTH_R"
 		(at 190.5 358.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15227,7 +15105,6 @@
 	)
 	(label "~{_FM4_WR}"
 		(at 266.7 260.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15238,7 +15115,6 @@
 	)
 	(label "_FM4_D4"
 		(at 228.6 250.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15249,7 +15125,6 @@
 	)
 	(label "~{_FM2_WR}"
 		(at 49.53 320.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15260,7 +15135,6 @@
 	)
 	(label "_FM5_D6"
 		(at 448.31 147.32 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15271,7 +15145,6 @@
 	)
 	(label "_FM4_SYNTH_L"
 		(at 266.7 242.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15282,7 +15155,6 @@
 	)
 	(label "YAC5_CH1"
 		(at 403.86 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15293,7 +15165,6 @@
 	)
 	(label "YAC2_CLK"
 		(at 92.71 309.88 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15304,7 +15175,6 @@
 	)
 	(label "YAC_CH1"
 		(at 139.7 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15315,7 +15185,6 @@
 	)
 	(label "YFM5_CLK"
 		(at 448.31 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15326,7 +15195,6 @@
 	)
 	(label "_FM3_D4"
 		(at 270.51 152.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15337,7 +15205,6 @@
 	)
 	(label "YAC4_CH1"
 		(at 317.5 322.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15348,7 +15215,6 @@
 	)
 	(label "_FM5_SYNTH_R"
 		(at 546.1 180.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15359,7 +15225,6 @@
 	)
 	(label "_FM4_A0"
 		(at 228.6 262.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15370,7 +15235,6 @@
 	)
 	(label "YAC3_CLK"
 		(at 270.51 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15381,7 +15245,6 @@
 	)
 	(label "YAC5_CH2"
 		(at 478.79 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15392,7 +15255,6 @@
 	)
 	(label "_FM5_D5"
 		(at 444.5 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15403,7 +15265,6 @@
 	)
 	(label "_FM5_D4"
 		(at 448.31 152.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15414,7 +15275,6 @@
 	)
 	(label "_FM3_D5"
 		(at 270.51 149.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15425,7 +15285,6 @@
 	)
 	(label "_FM2_A1"
 		(at 49.53 317.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15436,7 +15295,6 @@
 	)
 	(label "_FM2_D4"
 		(at 50.8 250.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15447,7 +15305,6 @@
 	)
 	(label "_FM4_D1"
 		(at 266.7 255.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15458,7 +15315,6 @@
 	)
 	(label "_FM3_D6"
 		(at 228.6 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15469,7 +15325,6 @@
 	)
 	(label "_FM2_D2"
 		(at 92.71 335.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15480,7 +15335,6 @@
 	)
 	(label "_FM3_D4"
 		(at 228.6 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15491,7 +15345,6 @@
 	)
 	(label "_FM2_D7"
 		(at 88.9 247.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15502,7 +15355,6 @@
 	)
 	(label "YAC2_CH2"
 		(at 139.7 320.04 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15513,7 +15365,6 @@
 	)
 	(label "~{_FM5_CS}"
 		(at 444.5 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15524,7 +15375,6 @@
 	)
 	(label "_FM2_D5"
 		(at 92.71 327.66 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15535,7 +15385,6 @@
 	)
 	(label "~{_FM5_WR}"
 		(at 444.5 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15546,7 +15395,6 @@
 	)
 	(label "_FM5_D3"
 		(at 448.31 154.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15557,7 +15405,6 @@
 	)
 	(label "YFM_CLK"
 		(at 92.71 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15568,7 +15415,6 @@
 	)
 	(label "_FM_D2"
 		(at 50.8 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15579,7 +15425,6 @@
 	)
 	(label "_FM4_SYNTH_R"
 		(at 228.6 242.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15590,7 +15435,6 @@
 	)
 	(label "_FM5_D7"
 		(at 444.5 69.85 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15601,7 +15445,6 @@
 	)
 	(label "_FM2_SYNTH_L"
 		(at 115.57 358.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15612,7 +15455,6 @@
 	)
 	(label "_FM3_D1"
 		(at 227.33 154.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15623,7 +15465,6 @@
 	)
 	(label "~{_FM6_WR}"
 		(at 405.13 320.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15634,7 +15475,6 @@
 	)
 	(label "_FM_D5"
 		(at 88.9 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15645,7 +15485,6 @@
 	)
 	(label "_FM3_D5"
 		(at 266.7 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15656,7 +15495,6 @@
 	)
 	(label "~{_FM_CS}"
 		(at 88.9 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15667,7 +15505,6 @@
 	)
 	(label "~{_FM_RD}"
 		(at 49.53 144.78 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15678,7 +15515,6 @@
 	)
 	(label "_FM6_A1"
 		(at 406.4 260.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15689,7 +15525,6 @@
 	)
 	(label "_FM3_D0"
 		(at 227.33 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15700,7 +15535,6 @@
 	)
 	(label "_FM2_A0"
 		(at 49.53 314.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15711,7 +15545,6 @@
 	)
 	(label "_FM_SYNTH_L"
 		(at 88.9 64.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15722,7 +15555,6 @@
 	)
 	(label "_FM_A0"
 		(at 50.8 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15733,7 +15565,6 @@
 	)
 	(label "_FM5_D4"
 		(at 406.4 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15744,7 +15575,6 @@
 	)
 	(label "_FM5_A0"
 		(at 405.13 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15755,7 +15585,6 @@
 	)
 	(label "_FM2_D3"
 		(at 92.71 332.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15766,7 +15595,6 @@
 	)
 	(label "_FM4_D3"
 		(at 266.7 252.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15777,7 +15605,6 @@
 	)
 	(label "YAC4_CH2"
 		(at 317.5 320.04 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15788,7 +15615,6 @@
 	)
 	(label "~{_BRESET2}"
 		(at 49.53 312.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15799,7 +15625,6 @@
 	)
 	(label "_FM5_SYNTH_R"
 		(at 406.4 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15810,7 +15635,6 @@
 	)
 	(label "YFM3_CLK"
 		(at 323.85 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15821,7 +15645,6 @@
 	)
 	(label "_FM2_D1"
 		(at 49.53 332.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15832,7 +15655,6 @@
 	)
 	(label "YAC_CH2"
 		(at 123.19 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15843,7 +15665,6 @@
 	)
 	(label "_FM3_A1"
 		(at 227.33 139.7 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15854,7 +15675,6 @@
 	)
 	(label "_FM5_D1"
 		(at 405.13 154.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15865,7 +15685,6 @@
 	)
 	(label "~{_FM6_CS}"
 		(at 405.13 325.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15876,7 +15695,6 @@
 	)
 	(label "~{_BRESET5}"
 		(at 405.13 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15887,7 +15705,6 @@
 	)
 	(label "~{_BRESET3}"
 		(at 228.6 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15898,7 +15715,6 @@
 	)
 	(label "~{_BRESET4}"
 		(at 227.33 312.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15909,7 +15725,6 @@
 	)
 	(label "_FM2_A1"
 		(at 50.8 260.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15920,7 +15735,6 @@
 	)
 	(label "_FM6_D0"
 		(at 405.13 330.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15931,7 +15745,6 @@
 	)
 	(label "YAC6_CH1"
 		(at 403.86 355.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15942,7 +15755,6 @@
 	)
 	(label "_FM_D5"
 		(at 92.71 149.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15953,7 +15765,6 @@
 	)
 	(label "~{_FM3_RD}"
 		(at 227.33 144.78 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15964,7 +15775,6 @@
 	)
 	(label "~{_FM_CS}"
 		(at 49.53 147.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15975,7 +15785,6 @@
 	)
 	(label "~{_FM4_CS}"
 		(at 266.7 257.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15986,7 +15795,6 @@
 	)
 	(label "YAC4_CH1"
 		(at 226.06 355.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15997,7 +15805,6 @@
 	)
 	(label "_FM5_D2"
 		(at 448.31 157.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16008,7 +15815,6 @@
 	)
 	(label "_FM4_D6"
 		(at 228.6 247.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16019,7 +15825,6 @@
 	)
 	(label "_FM3_SYNTH_L"
 		(at 266.7 64.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16030,7 +15835,6 @@
 	)
 	(label "_FM4_D7"
 		(at 270.51 322.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16041,7 +15845,6 @@
 	)
 	(label "~{_BRESET3}"
 		(at 227.33 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16052,7 +15855,6 @@
 	)
 	(label "~{_FM2_CS}"
 		(at 49.53 325.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16063,7 +15865,6 @@
 	)
 	(label "~{_FM2_RD}"
 		(at 50.8 257.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16074,7 +15875,6 @@
 	)
 	(label "_FM6_D7"
 		(at 448.31 322.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16085,7 +15885,6 @@
 	)
 	(label "_FM4_D2"
 		(at 228.6 252.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16096,7 +15895,6 @@
 	)
 	(label "~{_FM4_WR}"
 		(at 227.33 320.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16107,7 +15905,6 @@
 	)
 	(label "_FM2_D0"
 		(at 49.53 330.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16118,7 +15915,6 @@
 	)
 	(label "~{_FM2_RD}"
 		(at 49.53 322.58 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16129,7 +15925,6 @@
 	)
 	(label "_FM3_D7"
 		(at 270.51 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16140,7 +15935,6 @@
 	)
 	(label "YAC3_CH2"
 		(at 300.99 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16151,7 +15945,6 @@
 	)
 	(label "_FM2_D6"
 		(at 92.71 325.12 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16162,7 +15955,6 @@
 	)
 	(label "~{_BRESET6}"
 		(at 406.4 245.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16173,7 +15965,6 @@
 	)
 	(label "_FM4_SYNTH_R"
 		(at 368.3 358.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16184,7 +15975,6 @@
 	)
 	(label "_FM_D7"
 		(at 88.9 69.85 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16195,7 +15985,6 @@
 	)
 	(label "_FM_D0"
 		(at 49.53 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16206,7 +15995,6 @@
 	)
 	(label "_FM6_D5"
 		(at 444.5 250.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16217,7 +16005,6 @@
 	)
 	(label "_FM4_A0"
 		(at 227.33 314.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16228,7 +16015,6 @@
 	)
 	(label "_FM6_SYNTH_L"
 		(at 471.17 358.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16239,7 +16025,6 @@
 	)
 	(label "_FM4_D7"
 		(at 266.7 247.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16250,7 +16035,6 @@
 	)
 	(label "_FM2_D0"
 		(at 50.8 255.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16261,7 +16045,6 @@
 	)
 	(label "_FM5_D7"
 		(at 448.31 144.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16272,7 +16055,6 @@
 	)
 	(label "_FM6_D4"
 		(at 406.4 250.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16283,7 +16065,6 @@
 	)
 	(label "~{_FM_RD}"
 		(at 50.8 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16294,7 +16075,6 @@
 	)
 	(label "YFM6_CLK"
 		(at 448.31 307.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16305,7 +16085,6 @@
 	)
 	(label "~{_FM6_RD}"
 		(at 406.4 257.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16316,7 +16095,6 @@
 	)
 	(label "_FM_D6"
 		(at 92.71 147.32 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16327,7 +16105,6 @@
 	)
 	(label "_FM5_D2"
 		(at 406.4 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16338,7 +16115,6 @@
 	)
 	(label "_FM_D1"
 		(at 49.53 154.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16349,7 +16125,6 @@
 	)
 	(label "_FM6_D5"
 		(at 448.31 327.66 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16360,7 +16135,6 @@
 	)
 	(label "~{_FM_WR}"
 		(at 49.53 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16371,7 +16145,6 @@
 	)
 	(label "_FM_A1"
 		(at 50.8 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16382,7 +16155,6 @@
 	)
 	(label "_FM4_A1"
 		(at 227.33 317.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16393,7 +16165,6 @@
 	)
 	(label "_FM6_D4"
 		(at 448.31 330.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16404,7 +16175,6 @@
 	)
 	(label "YAC6_CLK"
 		(at 448.31 309.88 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16415,7 +16185,6 @@
 	)
 	(label "_FM_D1"
 		(at 88.9 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16426,7 +16195,6 @@
 	)
 	(label "_FM6_D6"
 		(at 406.4 247.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16437,7 +16205,6 @@
 	)
 	(label "~{_FM3_WR}"
 		(at 227.33 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16448,7 +16215,6 @@
 	)
 	(label "_FM2_D4"
 		(at 92.71 330.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17212,7 +16978,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "llama_shared:XO_SMD5032"
+		(property "Footprint" "llama_shared:XO_SMD7050"
 			(at 322.58 264.16 0)
 			(effects
 				(font
@@ -17239,7 +17005,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C387230"
+		(property "LCSC" "C41988065"
 			(at 308.61 264.16 0)
 			(show_name yes)
 			(effects
@@ -18486,7 +18252,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "llama_shared:XO_SMD5032"
+		(property "Footprint" "llama_shared:XO_SMD7050"
 			(at 144.78 264.16 0)
 			(effects
 				(font
@@ -18513,7 +18279,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C387230"
+		(property "LCSC" "C41988065"
 			(at 130.81 264.16 0)
 			(show_name yes)
 			(effects
@@ -25756,7 +25522,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "llama_shared:XO_SMD5032"
+		(property "Footprint" "llama_shared:XO_SMD7050"
 			(at 500.38 86.36 0)
 			(effects
 				(font
@@ -25783,7 +25549,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C387230"
+		(property "LCSC" "C41988065"
 			(at 486.41 86.36 0)
 			(show_name yes)
 			(effects
@@ -26752,7 +26518,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "llama_shared:XO_SMD5032"
+		(property "Footprint" "llama_shared:XO_SMD7050"
 			(at 144.78 86.36 0)
 			(effects
 				(font
@@ -26779,7 +26545,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C387230"
+		(property "LCSC" "C41988065"
 			(at 130.81 86.36 0)
 			(show_name yes)
 			(effects
@@ -27367,7 +27133,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "llama_shared:XO_SMD5032"
+		(property "Footprint" "llama_shared:XO_SMD7050"
 			(at 500.38 264.16 0)
 			(effects
 				(font
@@ -27394,7 +27160,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C387230"
+		(property "LCSC" "C41988065"
 			(at 486.41 264.16 0)
 			(show_name yes)
 			(effects
@@ -36010,7 +35776,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "llama_shared:XO_SMD5032"
+		(property "Footprint" "llama_shared:XO_SMD7050"
 			(at 322.58 86.36 0)
 			(effects
 				(font
@@ -36037,7 +35803,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C387230"
+		(property "LCSC" "C41988065"
 			(at 308.61 86.36 0)
 			(show_name yes)
 			(effects
